@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div ng-include="'app/components/navbar/navbar.html'"></div>
+
+  <div>
+        <label class="item item-input">
+            <input type="text" placeholder="Username" ng-model="login_data.username">
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="login_data.password">
+        </label>
+
+      <button class="button button-block button-positive" ng-click="login(login_data)">Login</button>
+  </div>
+</div>
