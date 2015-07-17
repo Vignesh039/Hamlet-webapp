@@ -1,0 +1,565 @@
+body, .form-control {
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: Roboto;
+  font-weight: 300;
+  box-shadow: none;
+}
+a {
+    text-decoration: none;
+  }
+  a , u {
+    text-decoration: none !important;
+}
+#map_canvas {
+    height:100%; 
+    width:100%;
+    position: absolute; 
+    top: 0;
+    left: 0 
+    }
+.navbar {
+  width: 100%;
+  height: 63px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-default {
+  background-color: rgba(70, 69, 58, 0.8);
+  border: 1px solid #000;
+  border-top: 0;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.navbar-brand img {
+  width: 110px;
+  height: 41px;
+}
+
+hr { 
+  margin:2px 0;
+  border-color: #DDD;
+}
+
+.login-register {
+  margin-top: 5px;
+}
+
+.login-register a {
+  color: #46453A;
+}
+
+.form-control[disabled]{
+  background: #fff;
+}
+
+.form-control:focus, .form-control:active {
+  border-color: #F47521;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(244, 117, 33, 0.6);
+}
+
+
+
+a {cursor: pointer; cursor: hand;}
+
+
+#map_canvas .leaflet-control-container .leaflet-top.leaflet-left{
+  width:100%;
+position: absolute;}
+#zippr-navigation-bar{ margin: 0; padding: 0; z-index:9;}
+
+div#zippr-controls {
+  margin-top: 16px;
+  width: 300px;
+  z-index: 10;
+}
+
+.btn-primary {
+  background-color: #F47521;
+  border: 1px solid #000;
+  font: Roboto;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+  background-color: #46453A;
+  color:#FFF !important;
+}
+
+.nav-pills li {
+  padding: 0px 5px;
+}
+
+.nav-pills > li > a {
+  border: 1px solid #000;
+
+  background-color: #F47521;
+  font-size: 13px;
+  color: #000;
+  font-weight: 500;
+  outline: none;
+  /*box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);*/
+}
+
+.nav-pills > li a:hover {
+  background-color: #F47521;
+  color: #FFF;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: #F47521;
+  color: #FFF;
+  cursor: default;
+}
+
+div#zippr-controls div.tab-content {
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 0px 10px;
+  border: 1px solid lightgray;
+  border-top: 4px solid #F47521;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 20px;
+  height: 350px;
+}
+
+div#zippr-controls div.tab-content div#other-tab-content {
+  max-height: 330px;
+  /*overflow-y: scroll;
+  overflow-y: hidden*/;
+  overflow-x: hidden;
+}
+
+div#form-input-inline {
+  width: 100%;
+  height: 30px;
+}
+
+div.form-group {
+  margin-bottom: 0px;
+}
+
+div#form-input-inline div.form-group{
+  width: 32%;
+  display: inline-block;
+}
+
+div#form-input-inline div.form-group:last-child { 
+  width: 65%;
+  float: right; 
+}
+
+.create-zippr-error, .validation-error {
+  color: red;
+  margin-top: 5px;
+  /* margin-left: 5px; */
+  text-align: center;
+}
+
+/* Google Search CSS */
+
+/*
+#search {
+  margin-top: 16px;
+  margin-left: 20px;
+}
+
+div#search  div.input-group {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+}
+*/
+
+.controls {
+  margin-top: 14px;
+  margin-left: 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 35px;
+  outline: none;
+  /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);*/
+  border: 1px solid #000;
+  /* border-bottom: 3px solid #F47521; */
+}
+
+#pac-input {
+  background-color: #fff;
+  padding: 0 11px 0 13px;
+  width: 400px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+}
+
+#pac-input:focus {
+  border-color: #F47521;
+  margin-left: -1px;
+  padding-left: 14px;  /* Regular padding-left + 1. */
+  width: 401px;
+}
+
+/* Overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter:alpha(opacity=50);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  z-index: 10000;
+}
+
+#overlay-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 10000;
+  color: #FFF;
+  font-family: Roboto;
+}
+
+div#overlay-content div.row {
+  height: 33%;
+}
+
+div#overlay-content div.col-md-4 {
+  height: 100%;
+}
+
+div#overlay-content p {
+  font-family: Roboto;
+  font-size: 20px;
+  /*
+  position: absolute;
+  top: 25%;
+  */
+  margin-top: 13%;
+  margin-left: 20px;
+}
+
+form#create-zippr-form {
+  margin-top: 15px;
+}
+
+/*
+form#create-zippr-form button.btn{
+  width: 100%;
+}
+*/
+
+div.suggestions {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+div#suggestion1{
+  margin-top: 16px;
+  margin-left: 20px;
+
+  width: 400px;
+  height: 35px;
+}
+
+div#suggestion3{
+  width: 275px;
+  margin: 10px 12px;
+  padding: 10px 0px;
+}
+
+div#suggestion2 {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  padding: 5px 15px;
+}
+
+
+div#suggestion2 p{
+  margin: 0;
+}
+
+div#suggestion1, div#suggestion2, div#suggestion3 {
+  display: none;
+}
+
+div#zippr_card p {
+  font-size: 12px;
+  color: #444;
+  text-align: justify;
+  /* padding: 0px 100px 0px 10px; */
+}
+
+/*
+div#zippr_card button {
+  width: 100%;
+}
+*/
+
+p#zippr-card-address {
+  border-right: 1px solid lightgray;
+  padding-right: 15px;
+}
+
+div#zippr_card p#zippr-card-title {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 0px 5px 10px;
+  border-bottom: 1px solid #DDD;
+}
+
+/*
+div#zippr-card-link {
+  background: #46453A;
+  padding-top: 6px;
+  padding-bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+div#zippr-card-link p{
+  color: #fff;
+}
+
+div#zippr-card-link a {
+  color: #F47521;
+}
+*/
+
+div#zippr-card-link input[name='zippr-url']{
+  background: #46453A;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 7px;
+}
+
+div#zippr-card-link span {
+  background-color: #F47521;
+  border: 1px solid #F47521;
+  padding-top: 4px;
+  padding-bottom: 8px;
+}
+
+div#zippr-card-link span a {
+  color: #fff;
+  outline: none;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+div#zippr-card-link span.input-group-addon:hover{
+  background-color: #46453A;
+  border: 1px solid #46453A;
+  border-left: 1px solid #ccc;
+}
+
+div#zippr-card-link span a:hover {
+  
+}
+
+p#zippr-card-share-text {
+  padding-left: 15px;
+  margin-bottom: 2px;
+  margin-top: 10px;
+}
+
+div#delete_zippr_confirmation {
+  margin: 50px 0px;
+  text-align: center;
+  width: 100%;
+}
+
+div#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter:alpha(opacity=50);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  z-index: 10000;
+  background: url("/static/webapp/images/ajax-loaderDesktop.gif") no-repeat center #000;
+  display: none;
+}
+
+
+div#user_zippr div.row {
+  width: 100%;
+  margin: 0;
+}
+
+div.zippr-tile {
+  padding: 3px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+div.user-zippr-info {
+  font-size: 12px;
+  color: grey;
+}
+
+div.user-zippr-title {
+  font-weight: 400;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.align-bottom {
+  position: relative;
+  bottom: 0px;
+  width: 83%;
+}
+
+div#create_zippr_suggestion {
+  color: #333333;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 48%;
+  width: 79%;
+  font-size: 21px;
+}
+
+p#verify-user-title {
+  font-size: 12px;
+  text-align: justify;
+}
+
+
+div#search-no-results {
+  width: 400px;
+  text-align: center;
+  margin-left: 0;
+  margin-top: 20px;
+  height: 35px;
+  display: none;
+}
+
+div#footer {
+  height: 30px;
+  background-color: rgba(70, 69, 58, 0.8);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+div#footer ul {
+  list-style: none;
+  margin: 5px 40px 5px 0px;
+}
+
+div#footer ul li {
+  float: left;
+}
+
+div#footer ul li a {
+  color: #fff;
+}
+
+div#footer ul li + li::before {
+    content: " | ";
+    color: #F47521;;
+    margin: 0 5px;
+}
+
+div#fitToBounds {
+  display: none;
+}
+
+div#fitToBounds button {
+  padding: 5px 10px;
+  font-size: 14px;
+  margin-left: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  border: 0;
+  color: #000;
+  font-weight: 400;
+  border-radius: 5px;
+}
+
+div#fitToBounds button:hover {
+  color: #F47521;
+}
+
+div#before-page-load {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #000;
+  position: absolute;
+  z-index: 10000;
+}
+
+a.download-from {
+  float: left;
+}
+
+a.download-from  img {
+  margin: 14px 5px;
+  width: 90px;
+  height: 35px;
+}
+
+div .logout{
+  background: #F47521;
+  padding: 5px;
+  border-radius: 5px;
+  border:1px solid #000 !important;
+  color:#000;width:60px;margin-left:160px;font-weight:500;cursor:pointer;font-size:13px;
+}
+
+ul.ui-autocomplete { position: absolute; cursor: default;z-index:9999999;}
+/*Form Block */
+#form-block{ width: 25%; position: absolute;; top: 5%; 
+right: 3%; z-index: 99;}
+#form-block > .row:first-child > ul{ margin:0; margin-bottom: 30px; padding: 0;}
+#form-block >.row:first-child > ul> li{ margin:0; padding: 0; list-style: none;}
+#form-block >.row:first-child > ul> li:first-child{ padding-right:5px}
+#form-block >.row:first-child > ul> li:last-child{ padding-left:5px}
+#form-block >.row:first-child >ul> li .btn{ display: block; width: 100%}
+
+
+#form-details{ background-color: #FFFFFF}
+.leaflet-bottom .leaflet-control{ margin-bottom: 45px !important}
+.ng-hide:not(.ng-hide-animate) {
+  /* this is just another form of hiding an element */
+  display: block!important;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}

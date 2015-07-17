@@ -1,0 +1,436 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"go",
+				"google"
+			],
+			[
+				"stu",
+				"students"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"last",
+				"lastname"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"border-col",
+				"border-collapse"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"my",
+				"mycontrol"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"o",
+				"ol	Tag"
+			],
+			[
+				"t",
+				"title"
+			],
+			[
+				"hell",
+				"helloTo"
+			],
+			[
+				"He",
+				"helloController"
+			],
+			[
+				"lo",
+				"log"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/vignesh/Desktop/AngularJs/sdata.html",
+		"/home/vignesh/Desktop/Thinclient_final/thinclient/views/webapp/m2.ejs",
+		"/home/vignesh/Desktop/seed_angular/seed-angular/src/app/components/navbar/navbar.html",
+		"/home/vignesh/Desktop/seed_angular/seed-angular/src/index.html",
+		"/var/www/html/test_ang/index.html",
+		"/var/www/html/src/index.html",
+		"/home/vignesh/Desktop/seed_angular/seed-angular/src/nav.html",
+		"/home/vignesh/Desktop/seed_angular/seed-angular/src/app/main/login.html",
+		"/home/vignesh/Desktop/AngularJs/map.html",
+		"/home/vignesh/Desktop/Untitled Folder/T0021-airpair-angularjs-tutorial-master/index.html",
+		"/home/vignesh/Desktop/Untitled Folder/T0021-airpair-angularjs-tutorial-master/templates/header.html",
+		"/home/vignesh/Desktop/Untitled Folder/T0021-airpair-angularjs-tutorial-master/templates/footer.html",
+		"/home/vignesh/Desktop/seed_angular/seed-angular/src/footer.html",
+		"/home/vignesh/Desktop/seed_angular/seed-angular/src/app/main/main.html",
+		"/home/vignesh/Desktop/seed_angular/seed-angular/src/app/components/footer/footer.html",
+		"/home/vignesh/Desktop/AngularJs/angularForm.html",
+		"/home/vignesh/Desktop/Thinclient_final/thinclient/views/mobileWidget/index.ejs",
+		"/home/vignesh/Desktop/AngularJs/data.txt",
+		"/home/vignesh/Desktop/seed_angular/seed-angular/dist/index.html",
+		"/home/vignesh/Desktop/AngularJs/angular3.html",
+		"/home/vignesh/Desktop/AngularJs/angular2.html",
+		"/home/vignesh/Desktop/AngularJs/angular4.html",
+		"/home/vignesh/Desktop/AngularJs/angular1.html",
+		"/home/vignesh/Desktop/Thinclient_final/thinclient/static/static/webapp/stylesheets/m2/style.css",
+		"/home/vignesh/Desktop/webapp-june22nd/thinclient/views/webapp/m2.ejs",
+		"/home/vignesh/Desktop/Thinclient_final/thinclient/views/webapp/desktop.ejs",
+		"/home/vignesh/Desktop/webapp-june22nd/thinclient/static/static/webapp/stylesheets/m2/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/stylesheets/desktop/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/css/bootstrap.min.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/views/webapp/desktop.ejs",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/views/webapp/m2.ejs",
+		"/home/vignesh/Desktop/Zippr/thinclient/views/webapp/desktop.ejs",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/tests/tests_post.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/tests/tests_get.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/tests/test-sample.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/js/jquery-1.11.1.min.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/js/jquery-1.11.2.min.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/js/zippr-ui.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/js/jquery.mobile-1.4.3.min.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/player/js/video.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/serverops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/scripts.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/mapops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/m2/serverops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/m2/scripts.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/m2/revgeo.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/m2/mapops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/m1/serverops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/m1/scripts.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/m1/mapops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/desktop/scripts.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/desktop/revgeo.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/javascripts/desktop/mapops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/js/update_device.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/js/revgeo.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/js/mapops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/js/jquery.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/js/tfs/revgeo.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/js/tfs/mapops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/enterpriseZippr/assets/js/jquery.min.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/enterpriseZippr/assets/js/bootstrap.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/mobileWidget/javascripts/revgeo.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/mobileWidget/javascripts/mapLoader.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/mobileWidget/javascripts/jquery-1.11.1.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/zippr1.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/zippr.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/serverops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/scripts.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/revgeo.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/mergedscripts.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/MarkerWithLabel.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/mapops.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/json2.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/jquery.validate.min.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/jquery.validate.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/javascripts/jquery.placeholder.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/js/scripts_mobile.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/js/scripts_desktop.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/js/scripts.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/js/jquery-1.11.1.min.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/js/jquery-1.4.2.min.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/js/jquery.validate.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/js/jquery.mobile-1.4.3.min.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/zippr.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/verifyEmail.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/sendEmail.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/retarget.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/resetPassword.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/webapp/zipprs.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/webapp/users.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/requestLocation/zippr.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/requestLocation/utils.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/requestLocation/tfs.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/requestLocation/enterpriseZippr.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/requestLocation/email.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/requestLocation/helpers/messageClient.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/mobileWidget/index.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/jswidget/zipprs.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/jswidget/user.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/routes/jswidget/index.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/gulpfile.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/logging/logger.js",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/player/css/video-js.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/css/zippr_style_d.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/css/zippr_style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/css/jquery.mobile-1.4.5.min.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/css/jquery.mobile-1.4.2.min.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/css/jquery.mobile.structure-1.4.3.min.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/css/font-awesome.min.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/css/font-awesome.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/zippr_claim/css/styles/zippr_style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/stylesheets/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/stylesheets/m2/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/webapp/stylesheets/m1/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/themes/jquery.mobile.icons.min.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/enterpriseZippr/assets/css/zippr_ui.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/enterpriseZippr/assets/css/font-awesome.min.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/enterpriseZippr/assets/css/font-awesome.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/enterpriseZippr/assets/css/bootstrap.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/css/zippr_created.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/css/user_owned.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/css/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/requestLocation/css/tfs/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/mobileWidget/stylesheets/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/mobileWidget/stylesheets/bootstrap.min.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/stylesheets/styles.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/stylesheets/style.css",
+		"/home/vignesh/Desktop/03-06-2015/thinclient/static/static/jswidget/stylesheets/bootstrap-ie7.css"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"rev",
+			"googleapis",
+			"sensor",
+			"libraries",
+			"myapp",
+			"lastname",
+			"firstname",
+			"mycontrol",
+			"myapp",
+			"lastname",
+			"firstname",
+			"mycontrol",
+			"create-zippr",
+			"focus",
+			"input",
+			"div#create-zippr-dialog ",
+			"form-control",
+			"$",
+			"mapboxKey",
+			"text",
+			"input",
+			"mapops",
+			"clickMyWallet",
+			"clickNext",
+			"jquery",
+			"jquery.min.js",
+			"500",
+			"300",
+			"Roboto",
+			"scripts",
+			"scripts.min",
+			"family=Open+Sans:300",
+			"ROBOto",
+			"http://fonts.googleapis.com/css?family=Open+Sans:300",
+			"fonts",
+			"https://fonts.googleapis",
+			"https://fonts.googleapis.com/css",
+			"https://fonts.googleapis.com/css?family=Roboto",
+			"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700",
+			"underscore",
+			"jquery",
+			"underscore",
+			"http://www",
+			"http://www.googleadservices",
+			"http://www.googleadservices.com/pagead/conversion.",
+			"http://www.googleadservices.com/pagead/conversion.js",
+			"http://www.googleadservices.com/pagead/conversion.js\n",
+			"/static/webapp/javascripts/desktop/jquery.min.js",
+			"/static/webapp/javascripts/desktop/revgeo.js",
+			"onload",
+			"pac-input",
+			"input",
+			"textarea",
+			"textarea ",
+			"button, input, optgroup, select, textarea ",
+			"#pac-input",
+			"#pac-input:focus",
+			"suggestion3",
+			"suggestion3ut",
+			".navbar-brand",
+			".navbar-brand img",
+			"//",
+			"scrip",
+			"main.js",
+			"maps.gstatic.com/maps-api-v3/api/js/21/2/main.js",
+			"cdn",
+			"marker.png"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "login.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
