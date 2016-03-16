@@ -1,0 +1,105 @@
+<div class="container">
+
+  <div ng-include="'app/components/navbar/navbar.html'"></div>
+
+  <div ng-init="getCities();">
+  <form class="form" >
+   	 <div class="row" style="margin-top:10px;">
+  	         <div class="col-md-1">
+         	 <label>Select City Name:</label>
+         	 </div>
+
+             <div class="col-md-2">
+              <select ng-model="cityList.city" class="form-control" required ng-change="createNewNeighbor()">
+               <option ng-repeat="cities in citiesList" value="{{cities.code}}">{{cities.name}}</option>
+               <option value="NONE">None</option>
+               </select>
+              </div>
+            
+             
+             <div class="col-md-6">
+            
+             </div>
+
+        </div>
+  </form>
+  </div>
+
+  <div class="row" style="margin-top:15px;" ng-show="onCity"> 
+  <div class="col-md-8" style="height:500px;">
+	<div id="map"></div>
+  </div>
+  <div class="col-md-4"> 
+  <form name="Form2" class="form" ng-submit="createNeighbour()">
+  <div class="form-group">
+  <p style="color:red; text-align:center;">{{accountstatus}}</p>
+  </div>
+  		<div class="form-group row">
+  		<div align="center"><span style="font-size: 23px;
+        color: #4CAF50;">Fill here Neighbourhood Details</span></div>
+  		</div>
+        
+         <div class="form-group row">
+               <div class="col-md-4">
+               <label>Area Name:</label></div>
+               <div class="col-md-8">
+               <input type="text" ng-model="neiForm.area" class="form-control" placeholder="enter area name" required></div>
+          </div>
+
+          <div class="form-group row">
+               <div class="col-md-4">
+               <label>Locality:</label></div>
+               <div class="col-md-8">
+               <input type="text" ng-model="neiForm.locality" class="form-control" placeholder="locality name" required></div>
+          </div>
+
+           <div class="form-group row">
+               <div class="col-md-4">
+               <label>Sub Locality:</label></div>
+               <div class="col-md-8">
+               <input type="text" ng-model="neiForm.sublocality" class="form-control" placeholder="sub locality name"></div>
+          </div>
+
+           <div class="form-group row">
+               <div class="col-md-4">
+               <label>City:</label></div>
+               <div class="col-md-8">
+               <input type="text" ng-model="neiForm.city" class="form-control" placeholder="locality name" required></div>
+          </div>
+
+          <div class="form-group row">
+               <div class="col-md-4">
+               <label>District:</label></div>
+               <div class="col-md-8">
+               <input type="text" ng-model="neiForm.district" class="form-control" placeholder="locality name" required></div>
+          </div>
+
+          <div class="form-group row">
+               <div class="col-md-4">
+               <label>State:</label></div>
+               <div class="col-md-8">
+               <input type="text" ng-model="neiForm.state" class="form-control" placeholder="locality name" required></div>
+          </div>
+
+          <div class="form-group row">
+               <div class="col-md-4">
+               <label>Country:</label></div>
+               <div class="col-md-8">
+               <input type="text" ng-model="neiForm.country" class="form-control" placeholder="locality name" required></div>
+          </div>
+
+ 
+            <div class="form-group row">
+             <div ng-show="createErrorMessage" class="alert alert-danger col-md-8" style="float:right;">{{ createErrorMessage }}</div>
+             <div ng-show="createMessage" class="alert alert-success col-md-8" style="float:right;">{{ createMessage }}</div></div>
+
+            <div class="form-group row">
+             <div class="col-md-8 " style="float:right;">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="neiForm.sub">Create Neighbour</button> </div>
+            </div>
+ 		 </form>
+  
+  		</div>
+  	</div>
+
+</div>

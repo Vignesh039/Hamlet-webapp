@@ -1,0 +1,87 @@
+<div class="container-fluid">
+
+  <div ng-include="'app/components/navbar/navbar.html'"></div>
+
+		<div class="row" style="margin-top:10px;">
+		            <div class="col-md-1" style="text-align:right">
+		  	        <label>Status : </label></div>
+		  	        <div class="col-md-2">
+		  	        <select ng-model="request.stats" class="form-control" required ng-change="getRecords()" style="vertical-align: middle;">
+		               <option value="ALL">All</option>
+		               <option value="PENDING">Pending</option>
+		               <option value="APPROVED">Approved</option>
+		               <option value="REJECTED">Rejected</option>
+		            </select>
+		            </div>
+		             
+		 </div>
+            
+
+
+  <div ng-init="getRequests();">
+  <div ng-show="message" class="alert alert-danger">{{ message }}</div>
+
+
+<ul class="paginate">
+    
+    <div class="text-center">
+              <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+  </ul>
+
+    <div>
+      <table class="table table-bordered">
+        <thead>
+          <th>Request Id</th>
+          <th>Area Name</th>
+          <th>Status</th>
+        </thead>
+        
+        <tbody>
+
+            <tr dir-paginate="listzippr in stausReport| itemsPerPage:pagination.perPage" total-items="pagination.total" item="listzippr" current-page="pagination.currentPage">
+              <td><a href="" ng-click="GotoViewpage($index);" > {{listzippr.neighbourhood_id}}</a></td>
+              <td>{{listzippr.name}} </td>
+              <td>{{listzippr.status}}</td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+  <ul class="paginate">
+    
+    <div class="text-center">
+              <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+  </ul>
+
+
+
+
+
+
+
+
+
+  <!--
+  <div align="center" class="row">
+  	<table>
+		 <tr>
+		   <th>Request Id</th>
+		   <th>Name</th>
+		   <th>Status</th>
+		   
+		 </tr>
+		  <tr ng-repeat="x in stausReport">
+		  	<td><a href="">{{ x.neighbourhood_id }}</a></td>
+		    <td>{{ x.name }}</td>
+		    <td>{{ x.status }}</td>
+		    
+		  </tr>
+  </table>
+  </div> -->
+
+  </div>
+ 
+
+</div>

@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('webapp', ['ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router','ngPrettyJson']);
+    .module('consoles', ['ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.bootstrap','ui.router','ui.grid','ngCsv','ngPrettyJson','ui.grid.exporter','zippr.config',"ngFileUpload","angularUtils.directives.dirPagination","LocalStorageModule",'angularModalService']);
 
 })();
