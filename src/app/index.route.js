@@ -46,6 +46,14 @@
               return AuthService.getStatus();
             }
           }
+      }).state('edit', {
+        url: '/edit',
+        templateUrl: 'app/main/edit.html',
+        controller: 'editController',
+        resolve:{status: function(AuthService){
+              return AuthService.getStatus();
+            }
+          }
       }).state('createUser', {
         url: '/createUser',
         templateUrl: 'app/main/createUser.html',

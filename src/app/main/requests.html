@@ -40,7 +40,7 @@
         <tbody>
 
             <tr dir-paginate="listzippr in stausReport| itemsPerPage:pagination.perPage" total-items="pagination.total" item="listzippr" current-page="pagination.currentPage">
-              <td><a href="" ng-click="GotoViewpage($index);" > {{listzippr.neighbourhood_id}}</a></td>
+              <td><a href="" ui-sref="edit" ng-click="GotoViewpage($index);" > {{listzippr.neighbourhood_id}}</a></td>
               <td>{{listzippr.name}} </td>
               <td>{{listzippr.status}}</td>
             </tr>
