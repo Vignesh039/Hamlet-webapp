@@ -1,7 +1,7 @@
 
 angular.module('consoles')
-  .controller('requestController', ['$scope','localStorageService', '$state','ZIPPR_ENVIRONMENT','$http',
-    function ($scope,localStorageService,$state,ZIPPR_ENVIRONMENT,$http) {
+  .controller('requestController', ['$scope','localStorageService','$location', '$state','ZIPPR_ENVIRONMENT','$http',
+    function ($scope,localStorageService,$location,$state,ZIPPR_ENVIRONMENT,$http) {
       'use strict';
     
      $scope.request = {};
@@ -15,14 +15,23 @@ angular.module('consoles')
 
 
      $scope.getRecords=function(){
-      var stat = $scope.request.stats;
-      $scope.getRequests(stat);
+      $location.stat = $scope.request.stats;
+      $scope.getRequests();
      }
      $scope.getRequests=function(){
       $scope.pageChangeHandler(1);
       };
       $scope.pageChangeHandler = function(num) {
-        console.log(num,"from pagination");
+        var recordsStatus;
+        if($location.stat !== undefined)
+        {
+          recordsStatus = $location.stat;
+          $scope.request.stats = $location.stat;
+        }else
+        {
+          recordsStatus = $scope.request.stats;
+        }
+      console.log($location.stat,"$location.stat");
       var session = localStorageService.get("sessiontoken");
       var userType = localStorageService.get("userType");
       var path;
@@ -39,13 +48,13 @@ angular.module('consoles')
                      "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
                      "x-hamlet-sessiontoken":session
             },
-            params:{"status":$scope.request.stats}
+            params:{"status":recordsStatus}
             };//,"page_no":1,"page_size":20
 
              $http(req1).success(function(data) {
               if(data.ok === true)
               {
-                $scope.message =false;
+               $scope.message =false;
                $scope.stausReport = data.response;
                $scope.pagination.total = 200;
                }else
@@ -57,7 +66,11 @@ angular.module('consoles')
            });
      };
 
-
+     $scope.GotoViewpage = function(obj)
+     {
+      $location.id = obj.listzippr._id;
+      $location.stat = $scope.request.stats; 
+      }
 
 
 

@@ -1,6 +1,6 @@
 angular.module('consoles')
  .factory('Messages', function(){
-
+'use strict';
  	var messages = {
         userName: '',
         sessionToken:'',

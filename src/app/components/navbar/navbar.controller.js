@@ -8,10 +8,12 @@ angular.module('consoles')
      var userType = localStorageService.get("userType");
      if (userType ==="hamlet_executive") {
       $scope.loginMessage="Logged In Executive : ";
+      $scope.Requests = "MyRequests";
       $scope.newUser = false;
      }else
      {
       $scope.loginMessage="Logged In Manager : ";
+      $scope.Requests = "Requests";
       $scope.newUser = true;
      }
      

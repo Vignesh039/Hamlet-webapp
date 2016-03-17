@@ -35,14 +35,18 @@
           <th>Request Id</th>
           <th>Area Name</th>
           <th>Status</th>
+          <th>Created By</th>
+          <th>Created Date</th>
         </thead>
         
         <tbody>
 
             <tr dir-paginate="listzippr in stausReport| itemsPerPage:pagination.perPage" total-items="pagination.total" item="listzippr" current-page="pagination.currentPage">
-              <td><a href="" ui-sref="edit" ng-click="GotoViewpage($index);" > {{listzippr.neighbourhood_id}}</a></td>
+              <td><a href="" ui-sref="edit" ng-click="GotoViewpage(this);" > {{listzippr._id}}</a></td>
               <td>{{listzippr.name}} </td>
               <td>{{listzippr.status}}</td>
+              <td>{{listzippr.action_by}}</td>
+              <td>{{listzippr.action_at| date:'medium'}}</td>
             </tr>
 
         </tbody>
