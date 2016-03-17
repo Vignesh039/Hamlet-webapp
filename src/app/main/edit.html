@@ -7,8 +7,6 @@
     <div class="row">
  <div ng-show="message" class="alert alert-danger">{{ message }}</div></div>
 
-
-  You can check your request details.
   <div align="center" class="row">
   	<table>
 		 <tr>
@@ -29,15 +27,15 @@
 		    <td>{{idReport.action}}</td>
 		  </tr>
   </table>
-  <div ng-show="Managers">
+  <div ng-show="Managers" style="margin-top:15px;" >
 <div ng-show="errormessage" class="alert alert-danger">{{ errormessage }}</div>
 <div ng-show="sucessmessage" class="alert alert-success">{{ sucessmessage }}</div>
-<button class="btn btn-primary" ng-click="onApprove();">Approve</button>
-<button class="btn btn-primary" ng-click="onReject();">Reject</button>
+<button class="btn btn-success" ng-click="onApprove();">Approve</button>
+<button class="btn btn-danger" ng-click="onReject();">Reject</button>
 	
-  </div></div>
+  </div>      </div>
  
- <div style="width:100%;height:600px;border:1px solid;">
+ <div style="width:100%;height:600px;border:1px solid;margin-top:15px;">
 	<div id="map"></div>
   </div>
 

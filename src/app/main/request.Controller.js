@@ -16,12 +16,16 @@ angular.module('consoles')
 
      $scope.getRecords=function(){
       $location.stat = $scope.request.stats;
+      $scope.pagination.currentPage = 1;
       $scope.getRequests();
+      console.log("call from getRecords");
      }
      $scope.getRequests=function(){
       $scope.pageChangeHandler(1);
+      console.log("call from getRequests");
       };
       $scope.pageChangeHandler = function(num) {
+        console.log(num,"num called");
         var recordsStatus;
         if($location.stat !== undefined)
         {
@@ -48,8 +52,12 @@ angular.module('consoles')
                      "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
                      "x-hamlet-sessiontoken":session
             },
-            params:{"status":recordsStatus}
+            params:{"status":recordsStatus,"page_no":num,"page_size":20}
             };//,"page_no":1,"page_size":20
+            if(recordsStatus === "ALL")
+            delete req1.params.status;
+
+            console.log(req1,"req1");
 
              $http(req1).success(function(data) {
               if(data.ok === true)
