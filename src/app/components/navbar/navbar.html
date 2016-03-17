@@ -19,9 +19,15 @@
          <strong>Disable</strong></a>
          </div>
 
-         <div class="btn-group" ng-click="setTab(5)" ng-show="newUser">
-         <a ui-sref="createUser" class="btn-success btn" ng-class="{active:isSet(5)}" >
-         <strong>Create User</strong></a>
+        <div class="btn-group" dropdown keyboard-nav ng-click="setTab(5)" ng-show="newUser" >
+        <button id="simple-btn-keyboard-nav" type="button" class="btn-success btn" dropdown-toggle ng-class="{active:isSet(5)}">
+        <strong>User</strong>
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu " role="menu" aria-labelledby="simple-btn-keyboard-nav">
+            <li><a href="" ui-sref="createUser" class="btn">Add New User</a></li>
+            <li ><a href="" class="btn " ng-disabled="true">Edit Existing User</a></li>               
+        </ul>
          </div>
 
         

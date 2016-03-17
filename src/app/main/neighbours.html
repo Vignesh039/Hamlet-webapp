@@ -3,16 +3,16 @@
   <div ng-include="'app/components/navbar/navbar.html'"></div>
 
   <div ng-init="getCities();">
-  <form class="form" >
+  
    	 <div class="row" style="margin-top:10px;">
   	         <div class="col-md-1">
          	 <label>Select City Name:</label>
          	 </div>
 
-             <div class="col-md-2">
-              <select ng-model="cityList.city" class="form-control" required ng-change="createNewNeighbor()">
+        <div class="col-md-2">
+        <select id="cityList" ng-model="cityList.city" class="form-control" ng-change="createNewNeighbor();" required>
                <option ng-repeat="cities in citiesList" value="{{cities.code}}">{{cities.name}}</option>
-               <option value="NONE">None</option>
+               <option value="NONE">Select City</option>
                </select>
               </div>
             
@@ -22,7 +22,7 @@
              </div>
 
         </div>
-  </form>
+ 
   </div>
 
   <div class="row" style="margin-top:15px;" ng-show="onCity"> 
@@ -41,7 +41,7 @@
         
          <div class="form-group row">
                <div class="col-md-4">
-               <label>Area Name:</label></div>
+               <label>Hamlet Name:</label></div>
                <div class="col-md-8">
                <input type="text" ng-model="neiForm.area" class="form-control" placeholder="enter area name" required></div>
           </div>
@@ -62,16 +62,16 @@
 
            <div class="form-group row">
                <div class="col-md-4">
+               <label>District:</label></div>
+               <div class="col-md-8">
+               <input type="text" ng-model="neiForm.district" class="form-control" placeholder="District name" required></div>
+          </div>
+
+           <div class="form-group row">
+               <div class="col-md-4">
                <label>City:</label></div>
                <div class="col-md-8">
                <input type="text" ng-model="neiForm.city" class="form-control" placeholder="locality name" required></div>
-          </div>
-
-          <div class="form-group row">
-               <div class="col-md-4">
-               <label>District:</label></div>
-               <div class="col-md-8">
-               <input type="text" ng-model="neiForm.district" class="form-control" placeholder="locality name" required></div>
           </div>
 
           <div class="form-group row">
@@ -85,18 +85,15 @@
                <div class="col-md-4">
                <label>Country:</label></div>
                <div class="col-md-8">
-               <input type="text" ng-model="neiForm.country" class="form-control" placeholder="locality name" required></div>
+               <input type="text" ng-model="neiForm.country" class="form-control" placeholder="country name" required ng-disabled="true"/></div>
           </div>
-
- 
+       <div class="form-group row">
+             <div class="col-md-8 " style="float:right;">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="neiForm.sub">Create Hamlet</button> </div>
+            </div>
             <div class="form-group row">
              <div ng-show="createErrorMessage" class="alert alert-danger col-md-8" style="float:right;">{{ createErrorMessage }}</div>
              <div ng-show="createMessage" class="alert alert-success col-md-8" style="float:right;">{{ createMessage }}</div></div>
-
-            <div class="form-group row">
-             <div class="col-md-8 " style="float:right;">
-            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="neiForm.sub">Create Neighbour</button> </div>
-            </div>
  		 </form>
   
   		</div>

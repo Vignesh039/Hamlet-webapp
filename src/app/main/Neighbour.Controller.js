@@ -4,9 +4,6 @@ angular.module('consoles')
       'use strict';
       $scope.cityList={};
       $scope.neiForm={};
-      $scope.neiForm.city="Hyderabad";
-      $scope.neiForm.district="Ranga Reddy";
-      $scope.neiForm.state="Telangana";
       $scope.neiForm.country="India";
       $scope.cityList.city="NONE";
       
@@ -19,17 +16,14 @@ angular.module('consoles')
             headers:{"Content-Type":"application/json",
                      "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
                      "x-hamlet-sessiontoken":session
-            },cache: true
+            }
             };
 
              $http(req1).success(function(data,status,headers,config) {
               if(data.ok === true)
               {
-                //console.log(headers('set-cookie'),"headers('content-type')");
-                //console.log(config,"header");
-                console.log(headers('Set-Cookie'),"cookie");
                 $scope.citiesList=data.response;
-                              
+                  console.log($scope.citiesList,"$scope.citiesList");            
               }else
               {
                $scope.message = data.error;
@@ -62,10 +56,14 @@ angular.module('consoles')
         $scope.map.on('draw:edited' ,showPolygonAreaEdited);
         $scope.map.on('draw:deleted',showDeletedPolygon);
     }
+    
       $scope.createNewNeighbor = function(){
-       
       if($scope.cityList.city !== "NONE")
       {
+        var index = document.getElementById('cityList').selectedIndex;
+        $scope.neiForm.city=$scope.citiesList[index].name;
+        $scope.neiForm.state=$scope.citiesList[index].state;
+      
         $scope.onCity=true;
         ///hamlet/nadmin/neighbourhoods?city=HYD
         var req1 = {
@@ -82,6 +80,7 @@ angular.module('consoles')
               if(data.ok === true)
               {
                       var obj = data.response;
+                      console.log(obj.length,"data from server")
                       var finalGeometry = {"type":"FeatureCollection", "features": []}
                       for(var i in data.response){
                         var geo = data.response[i];
@@ -95,11 +94,6 @@ angular.module('consoles')
                       var layer1 = L.geoJson(finalGeometry, {
                       onEachFeature: function (feature, layer) {
                       featureGroup.addLayer(layer);
-                      //debugger;
-                      //layer.editing=false;
-                      // layer.on('mouseover', function(e){
-                      // e.target.editing.disable();
-                      // });
                       var content = feature.properties.name;
                       layer.bindPopup(content);
                       //updateLayer();
@@ -113,6 +107,8 @@ angular.module('consoles')
                 $scope.message = data.error.reason;
               }
            })
+      }else{
+         $scope.onCity=false;
       }
      
           
@@ -182,30 +178,10 @@ angular.module('consoles')
             }
            console.log($scope.storeDb,"In osm map polygon deleted");
          } 
-        /* 
-        var req1 = {
-            method: 'POST',
-            url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhoods/update",
-            headers:{"Content-Type":"application/json",
-                     "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
-                     "x-hamlet-sessiontoken":session
-            }
-            };
-
-             $http(req1).success(function(data) {
-              if(data.ok === true)
-              {
-               console.log(data,"from update polygon");
-               }else
-              {
-                console.log(data,"error from update polygon");
-               $scope.message = data.error;
-              }
-           }).error(function(data) {
-              console.log(data,"error data");
-           });*/
+       
 
     $scope.createNeighbour=function(){
+      //console.log($scope.cityList.city,"$scope.cityList.city");
       if (typeof $scope.storeDb === "object") 
         {
       var req1 = {
