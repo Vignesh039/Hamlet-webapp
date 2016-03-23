@@ -119,7 +119,7 @@ angular.module('consoles')
                       layer.bindPopup(content);
                        },
                       style: function(feature) {
-                      return {fillColor: "#4CAF50",color: '#000000'};
+                      return {fillColor: "#4CAF50",color: '#000000',opacity: 0.3};
                       }
         });
 	  

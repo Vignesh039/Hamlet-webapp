@@ -14,11 +14,7 @@
                <option value="NONE">Select City</option>
                </select>
               </div>
-            <!--
-             <div class="col-md-2">
-             <button class="btn btn-primary" type="submit">Get Neighbours</button>
-             </div> -->
-             <div class="col-md-6">
+            <div class="col-md-6">
              <div ng-show="createErrorMessage" class="alert alert-danger col-md-8" style="float:right;">{{ createErrorMessage }}</div>
              <div ng-show="createMessage" class="alert alert-success col-md-8" style="float:right;">{{ createMessage }}</div>
              </div>
@@ -37,12 +33,12 @@
 
 </div>
 
-<script type="text/ng-template" id="confirmUpdate.html">
+<script type="text/ng-template" id="confirmEnable.html">
         <div class="modal-header">
             <h3 class="modal-title">Confirmation Required ?</h3>
         </div>
         <div class="modal-body">
-        <span>Are You Sure Want To Change polygon of <b>{{polygonName}}?</b>
+        <span>Are You Sure Want To Enable polygon of <b>{{polygonName}}?</b>
         </div>
         <div class="modal-footer">
         <button type="button" ng-click="userConfirmation('No')" class="btn btn-default" data-dismiss="modal">No</button>

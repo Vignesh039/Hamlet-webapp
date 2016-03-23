@@ -88,3 +88,10 @@ tbody{
     vertical-align: middle;
     border-color: inherit;
 }
+.container-fluid {
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    padding:0px;
+    margin-right: auto;
+    margin-left: auto;
+}

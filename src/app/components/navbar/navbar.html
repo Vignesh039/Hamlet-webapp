@@ -1,4 +1,9 @@
-<div class="collapse navbar-collapse" style="background: #4CAF50;" ng-controller="NavbarController"> 
+<div class="container-fluid collapse navbar-collapse" style="background: #4CAF50;" ng-controller="NavbarController"> 
+
+        <div class="btn-group">
+         <a href="http://myhamlet.in/" target="_blank"><img src="/logo.png" style="padding:0 5px 0 5px; ">
+         </a>
+         </div>
 
         <div class="btn-group" ng-click="setTab(1)" ng-model="deleted">
          <a ui-sref="requests" class="btn-success btn" ng-class="{active:isSet(1)}" >
@@ -18,9 +23,13 @@
          <a ui-sref="disable" class="btn-success btn" ng-class="{active:isSet(4)}" >
          <strong>Disable</strong></a>
          </div>
+          <div class="btn-group" ng-click="setTab(5)">
+         <a ui-sref="enable" class="btn-success btn" ng-class="{active:isSet(5)}" >
+         <strong>Enable</strong></a>
+         </div>
 
-        <div class="btn-group" dropdown keyboard-nav ng-click="setTab(5)" ng-show="newUser" >
-        <button id="simple-btn-keyboard-nav" type="button" class="btn-success btn" dropdown-toggle ng-class="{active:isSet(5)}">
+        <div class="btn-group" dropdown keyboard-nav ng-click="setTab(6)" ng-show="newUser" >
+        <button id="simple-btn-keyboard-nav" type="button" class="btn-success btn" dropdown-toggle ng-class="{active:isSet(6)}">
         <strong>User</strong>
         <span class="caret"></span>
         </button>

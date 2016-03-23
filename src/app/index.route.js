@@ -46,6 +46,14 @@
               return AuthService.getStatus();
             }
           }
+      }).state('enable', {
+        url: '/enable',
+        templateUrl: 'app/main/enable.html',
+        controller: 'EnableController',
+        resolve:{status: function(AuthService){
+              return AuthService.getStatus();
+            }
+          }
       }).state('edit', {
         url: '/edit',
         templateUrl: 'app/main/edit.html',
