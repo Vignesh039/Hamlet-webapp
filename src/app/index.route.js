@@ -62,6 +62,14 @@
               return AuthService.getStatus();
             }
           }
+      }).state('resend', {
+        url: '/resend',
+        templateUrl: 'app/main/resend.html',
+        controller: 'resendController',
+        resolve:{status: function(AuthService){
+              return AuthService.getStatus();
+            }
+          }
       }).state('createUser', {
         url: '/createUser',
         templateUrl: 'app/main/createUser.html',

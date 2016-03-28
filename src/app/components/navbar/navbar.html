@@ -10,26 +10,22 @@
          <strong>{{Requests}}</strong></a>
          </div>
 
-         <div class="btn-group" ng-click="setTab(2)">
-         <a ui-sref="neighbours" class="btn-success btn" ng-class="{active:isSet(2)}" >
-         <strong>New Neighbour</strong></a>
-         </div>
-        
-         <div class="btn-group" ng-click="setTab(3)">
-         <a ui-sref="update" class="btn-success btn" ng-class="{active:isSet(3)}" >
-         <strong>Update</strong></a>
-         </div>
-         <div class="btn-group" ng-click="setTab(4)">
-         <a ui-sref="disable" class="btn-success btn" ng-class="{active:isSet(4)}" >
-         <strong>Disable</strong></a>
-         </div>
-          <div class="btn-group" ng-click="setTab(5)">
-         <a ui-sref="enable" class="btn-success btn" ng-class="{active:isSet(5)}" >
-         <strong>Enable</strong></a>
+         
+         <div class="btn-group" dropdown keyboard-nav ng-click="setTab(2)" ng-show="newUser" >
+        <button id="simple-btn-keyboard-nav" type="button" class="btn-success btn" dropdown-toggle ng-class="{active:isSet(2)}">
+        <strong>Neighbourhoods</strong>
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu " role="menu" aria-labelledby="simple-btn-keyboard-nav">
+            <li><a href="" ui-sref="neighbours" class="btn">New Neighbour</a></li>
+            <li ><a href="" ui-sref="update" class="btn">Update</a></li>
+            <li ><a href="" ui-sref="disable" class="btn">Disable</a></li>  
+            <li ><a href="" ui-sref="enable" class="btn">Enable</a></li>             
+        </ul>
          </div>
 
-        <div class="btn-group" dropdown keyboard-nav ng-click="setTab(6)" ng-show="newUser" >
-        <button id="simple-btn-keyboard-nav" type="button" class="btn-success btn" dropdown-toggle ng-class="{active:isSet(6)}">
+        <div class="btn-group" dropdown keyboard-nav ng-click="setTab(3)" ng-show="newUser" >
+        <button id="simple-btn-keyboard-nav" type="button" class="btn-success btn" dropdown-toggle ng-class="{active:isSet(3)}">
         <strong>User</strong>
         <span class="caret"></span>
         </button>
@@ -38,6 +34,12 @@
             <li ><a href="" class="btn " ng-disabled="true">Edit Existing User</a></li>               
         </ul>
          </div>
+
+
+
+
+
+
 
         
         <div class="btn-group navbar-right" dropdown keyboard-nav>

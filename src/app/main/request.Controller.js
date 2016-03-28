@@ -35,7 +35,7 @@ angular.module('consoles')
         {
           recordsStatus = $scope.request.stats;
         }
-      console.log($location.stat,"$location.stat");
+      
       var session = localStorageService.get("sessiontoken");
       var userType = localStorageService.get("userType");
       var path;
@@ -79,7 +79,11 @@ angular.module('consoles')
       $location.id = obj.listzippr._id;
       $location.stat = $scope.request.stats; 
       }
-
+$scope.Resendpage= function(obj)
+     {
+      $location.resendObj = $scope.stausReport[obj];
+      $state.go('resend');
+      }
 
 
 
