@@ -84,11 +84,11 @@ angular.module('consoles')
                 console.log(response,"response");
             }, function (str) {
               if(str === "success"){
-                $scope.createErrorMessage=false;
+                $scope.Errormessage=false;
                 $scope.createMessage ="Successfully Polygon updated";
                 }else{
                    $scope.createMessage=false;
-                   $scope.createErrorMessage = str;
+                   $scope.Errormessage = str;
                 }
         });
            
