@@ -10,6 +10,7 @@ angular.module('consoles')
       $state.go('requests');
     }else
     {
+      console.log($location.resendObj,"$location.resendObj");
       initializeMap();
     }
     function initializeMap()

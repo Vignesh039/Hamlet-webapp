@@ -21,7 +21,7 @@ angular.module('consoles')
       
       var req1 = {
             method: 'POST',
-            url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhood/resend",
+            url: ZIPPR_ENVIRONMENT.server+"/hamlet/nadmin/neighbourhoods/resend",
             headers:{"Content-Type":"application/json",
                      "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
                      "x-hamlet-sessiontoken":session
