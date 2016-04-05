@@ -63,16 +63,14 @@ angular.module('consoles')
         var index = document.getElementById('cityList').selectedIndex;
         $scope.neiForm.city=$scope.citiesList[index].name;
         $scope.neiForm.state=$scope.citiesList[index].state;
-      
         $scope.onCity=true;
-        ///hamlet/nadmin/neighbourhoods?city=HYD
         var req1 = {
             method: 'GET',
             url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhoods",
             headers:{"Content-Type":"application/json",
                      "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
                      "x-hamlet-sessiontoken":session
-            },cache: true,
+            },
             params:{"city":$scope.cityList.city}
             };
 

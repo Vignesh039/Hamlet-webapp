@@ -13,6 +13,7 @@ angular.module('consoles')
       console.log($location.resendObj,"$location.resendObj");
       initializeMap();
     }
+    
     function initializeMap()
     {
      $scope.idReport = $location.resendObj;
@@ -48,7 +49,7 @@ angular.module('consoles')
        var content = feature.properties.name;
        layer.bindPopup(content);
        },style: function(feature) {
-         return {fillColor: "#4CAF50",color: '#000000',opacity: 0.3};
+         return {fillColor: "#4CAF50",color: '#000000',fillOpacity: 0.5};//,opacity: 0.1
          }
         });
        $scope.map.on('draw:edited' ,showPolygonAreaEdited);

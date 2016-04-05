@@ -12,7 +12,13 @@ angular.module('consoles')
         currentPage: 1,
         total: 200
         };
-
+      var userType = localStorageService.get("userType");
+     if (userType ==="hamlet_executive") {
+       $scope.actionBy = false;
+     }else
+     {
+      $scope.actionBy = true;
+     }
 
      $scope.getRecords=function(){
       $location.stat = $scope.request.stats;

@@ -34,9 +34,9 @@
         <thead>
           <th>Request Id</th>
           <th>Area Name</th>
-          <th>Action By</th>
-          <th>Status</th>
+          <th ng-show="actionBy">Action By</th>
           <th>Action</th>
+          <th>Status</th>
           <th>Acted By</th>
           <th>Acted At</th>
         </thead>
@@ -46,9 +46,9 @@
             <tr dir-paginate="listzippr in stausReport| itemsPerPage:pagination.perPage" total-items="pagination.total" item="listzippr" current-page="pagination.currentPage">
               <td><a href="" ui-sref="edit" ng-click="GotoViewpage(this);" > {{listzippr._id}}</a></td>
               <td>{{listzippr.name}} </td>
-              <td>{{listzippr.action_by}} </td>
-              <td>{{listzippr.status}}</td>
+              <td ng-show="actionBy">{{listzippr.action_by}} </td>
               <td>{{listzippr.action}}</td>
+              <td>{{listzippr.status}}</td>
               <td>{{listzippr.acted_by}}</td>
               <td>{{listzippr.acted_at| date:'medium'}}</td>
                <td ng-show="(listzippr.status =='REJECTED')&&((listzippr.action =='CREATED')||(listzippr.action =='EDITED')) "><a class="btn btn-primary" ng-click="Resendpage($index);">Resend</a></td>
