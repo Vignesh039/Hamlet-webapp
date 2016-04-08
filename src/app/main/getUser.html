@@ -1,0 +1,80 @@
+<div class="container-fluid">
+
+  <div ng-include="'app/components/navbar/navbar.html'"></div>
+
+   <div class="page-header" align="center">
+    <h3 style="color: chocolate;">Users Details </h3>      
+  </div>
+   <div ng-show="createErrorMessage" class="alert alert-danger form-group" >{{ createErrorMessage }}</div>
+   <div class="container">
+   <form class="form-inline" ng-submit="getuserDetails();">
+   	       <div class="form-group">
+         	 <label>Enter User Email:</label>
+         	  <input class="form-control" type="email" placeholder="email id" 
+                   ng-model="userEmail" name="name" autofocus required>
+         	 </div>
+         	 <div class="form-group">
+         	 	<input type="submit" class="btn btn-primary" value="Submit"/>
+         	 </div>
+   </form>
+
+     <div ng-show="createMessage" ng-init="getCities()" style="margin-top:15px;" >
+     
+      <table class="table table-bordered">
+        <thead>
+          <th>Id</th>
+          <th>Email</th>
+          <th>user_type</th>
+          <th>cities</th>
+          <th>username</th>
+          
+        </thead>
+        
+        <tbody>
+              <td>{{userDes._id}} </td>
+              <td>{{userDes.email}} </td>
+              <td>{{userDes.user_type}}</td>
+              <td>{{userDes.cities}}</td>
+              <td>{{userDes.username}}</td>
+        </tbody>
+      </table>
+       <form ng-submit="UpdateUserAccount()" autocomplete="off" style="max-width:400px;">
+
+       <div class="form-group row">
+       <div class="col-md-4">
+       <label>User Name:</label></div>
+       <div class="col-md-8">
+       <input type="email" ng-model="userDes.username" class="form-control" placeholder="user email id"  name="username" value="" required></div>
+       </div>
+        <div class="form-group row" style="margin-top:10px;">
+         <div class="col-md-4">
+         <label>UserType:</label></div>
+         <div class="col-md-8">
+         <select name="singleSelect" ng-model="userDes.user_type"  class="form-control" required >
+     	 <option value="hamlet_executive">Excutive</option>
+         <option value="hamlet_manager">Manager</option>
+         </select></div>
+         </div>
+        
+         <div class="form-group row" style="margin-top:10px;" ng-show="userDes.user_type =='hamlet_executive'">
+         	<div class="col-md-4">
+              <label>City Name:</label></div>
+              <div class="col-md-8">
+            <select ng-model="userDes.cities"  multiple="true" class="form-control" >
+            <option ng-repeat="cities in citiesList" value="{{cities.code}}">{{cities.name}}</option>
+               </select></div>
+            </div> 
+            <div class="form-group row">
+
+             <div ng-show="updatecreateMessage" class="alert alert-success " >{{ updatecreateMessage }}</div>
+
+             <div ng-show="updateErrorMessage" class="alert alert-danger">{{ updateErrorMessage }}</div>
+
+             </div>
+            <div class="form-group row" align="center">
+            <input type="submit" class="btn btn-primary" value="Update User" ng-disabled="submitbtn">
+            </div>
+  </form>
+    </div>
+</div>
+  </div>

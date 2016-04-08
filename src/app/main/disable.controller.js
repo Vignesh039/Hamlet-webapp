@@ -54,7 +54,7 @@ angular.module('consoles')
           });
           var fullscreenControl = new L.Control.Fullscreen().addTo($scope.map);
 
-        $scope.map.addControl(drawControl);
+        //$scope.map.addControl(drawControl);
         $scope.map.setView([17.353044912613186,78.48209023475647], 12);
         $scope.map.on('draw:deleted',showDeletedPolygon);
         var myElements = document.querySelectorAll(".leaflet-draw-edit-edit");
@@ -129,10 +129,15 @@ angular.module('consoles')
                       onEachFeature: function (feature, layer) {
                        featureGroup.addLayer(layer);
                       layer.on('dblclick', function(e){
-                        if(drawGroup.getLayers().length===0)
+                        /*if(drawGroup.getLayers().length===0)
                             {
                                drawGroup.addLayer(e.target);
-                            }
+                            }*/
+                            var shape = e.target.toGeoJSON();   
+                            var shape_for_db = JSON.stringify(shape);
+                            $scope.storeDb = JSON.parse(shape_for_db);
+                            Messages.setData($scope.storeDb);
+                            $scope.show();
                         
                          });
                       var content = feature.properties.name;

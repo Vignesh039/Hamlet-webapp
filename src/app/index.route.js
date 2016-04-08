@@ -78,6 +78,14 @@
               return AuthService.getStatus();
             }
           }
+      }).state('getUser', {
+        url: '/getUser',
+        templateUrl: 'app/main/getUser.html',
+        controller: 'GetUserController',
+        resolve:{status: function(AuthService){
+              return AuthService.getStatus();
+            }
+          }
       }).state('password', {
         url: '/password',
         templateUrl: 'app/main/password.html',
