@@ -28,7 +28,7 @@ angular.module('consoles')
            });
      
     $scope.onApprove=function(){
-    	console.log("request approved");
+    	
     	var req1 = {
             method: 'POST',
             url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhoods/approve",
@@ -44,7 +44,8 @@ angular.module('consoles')
               if(data.ok === true)
               {
                $scope.errormessage =false;
-               $scope.sucessmessage = data.response;
+               $scope.acted=true;
+               $scope.sucessmessage = "New hamlet Approved";
                }else
               {
               	$scope.sucessmessage = false;
@@ -73,7 +74,8 @@ angular.module('consoles')
               if(data.ok === true)
               {
                $scope.errormessage =false;
-               $scope.sucessmessage = data.response;
+               $scope.acted=true;
+               $scope.sucessmessage = "New hamlet Rejected";
                }else
               {
               	$scope.sucessmessage = false;
@@ -99,7 +101,9 @@ angular.module('consoles')
 	      $scope.map =L.mapbox.map('map', 'mapbox.streets');
 	      var centerPoint = $scope.idReport.geometry.coordinates[0][0];
 	  	  $scope.map.setView([centerPoint[1],centerPoint[0]], 17);
-	 	  var featureGroup =  new L.FeatureGroup().addTo($scope.map);
+	 	    var fullscreenControl = new L.Control.Fullscreen().addTo($scope.map);
+
+        var featureGroup =  new L.FeatureGroup().addTo($scope.map);
 	  	  var finalGeometry = {"type":"FeatureCollection", "features": []}
 	                   for(var i in $scope.idReport){
 	                        var geo = $scope.idReport;

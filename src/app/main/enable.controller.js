@@ -37,6 +37,8 @@ angular.module('consoles')
       $scope.map =  L.mapbox.map('map', 'mapbox.streets',{maxBounds: bounds,maxZoom: 19,
        minZoom: 10
        });
+      var fullscreenControl = new L.Control.Fullscreen().addTo($scope.map);
+
       $scope.map.setView([17.353044912613186,78.48209023475647], 15);
       featureGroup =  new L.FeatureGroup().addTo($scope.map);
       $scope.map.setView([17.353044912613186,78.48209023475647], 12);

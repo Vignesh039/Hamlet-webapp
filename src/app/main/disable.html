@@ -1,28 +1,26 @@
 <div class="container-fluid">
 
   <div ng-include="'app/components/navbar/navbar.html'"></div>
+   <div class="page-header" align="center">
+    <h3 style="color: chocolate;">Disable Neighbourhood </h3>      
+  </div>
    <div ng-init="getCities();">
-  <form class="form">
-   	 <div class="row" style="margin-top:10px;">
-  	         <div class="col-md-1">
+  <div class="form-inline">
+   	       <div class="form-group">
          	 <label>Select City Name:</label>
-         	 </div>
-
-             <div class="col-md-2">
-              <select ng-model="cityList.city" class="form-control" required ng-change="onCityChange()">
+         	 <select ng-model="cityList.city" class="form-control" required ng-change="onCityChange()">
                <option ng-repeat="cities in citiesList" value="{{cities.code}}">{{cities.name}}</option>
                <option value="NONE">Select City</option>
                </select>
               </div>
-            <div class="col-md-6">
-             <div ng-show="createErrorMessage" class="alert alert-danger col-md-8" style="float:right;">{{ createErrorMessage }}</div>
-             <div ng-show="createMessage" class="alert alert-success col-md-8" style="float:right;">{{ createMessage }}</div>
-             </div>
-
-        </div>
-  </form>
+           
+             <div ng-show="createErrorMessage" class="alert alert-danger form-group" >{{ createErrorMessage }}</div>
+             <div ng-show="createMessage" class="alert alert-success form-group" >{{ createMessage }}</div>
+             
+        
   </div>
-
+  </div>
+<div class="alert alert-info" align="center" ng-show="onCity"><h5 style="color: crimson;">Double click on the polygon what you want to disable and click on delete icon on leftside of map</h5></div>
   <div style="width:100%;height:600px;border:1px solid;" ng-show="onCity">
 	<div id="map"></div>
   </div>

@@ -95,3 +95,6 @@ tbody{
     margin-right: auto;
     margin-left: auto;
 }
+.alert {
+    padding: 0px;
+    }

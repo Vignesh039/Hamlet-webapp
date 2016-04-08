@@ -10,14 +10,17 @@ angular.module('consoles')
      $scope.pagination = {
         perPage: 20,
         currentPage: 1,
-        total: 200
+        total: 20
         };
       var userType = localStorageService.get("userType");
      if (userType ==="hamlet_executive") {
        $scope.actionBy = false;
+       $scope.userRole= true;
      }else
      {
+      console.log("vignesh");
       $scope.actionBy = true;
+      $scope.userRole= false;
      }
 
      $scope.getRecords=function(){
@@ -69,8 +72,11 @@ angular.module('consoles')
               if(data.ok === true)
               {
                $scope.message =false;
-               $scope.stausReport = data.response;
-               $scope.pagination.total = 200;
+               $scope.stausReport = data.response.requests;
+               $scope.pagination.total = data.response.total_count;
+               //if (data.response.total_count === undefined)
+                //$scope.pagination.total =10;
+
                }else
               {
                $scope.message = data.error;

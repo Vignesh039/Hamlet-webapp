@@ -52,6 +52,8 @@ angular.module('consoles')
           edit: {featureGroup: drawGroup},
           remove: false
           });
+          var fullscreenControl = new L.Control.Fullscreen().addTo($scope.map);
+
         $scope.map.addControl(drawControl);
         $scope.map.setView([17.353044912613186,78.48209023475647], 12);
         $scope.map.on('draw:deleted',showDeletedPolygon);

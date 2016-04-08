@@ -1,7 +1,9 @@
 <div class="container-fluid">
 
   <div ng-include="'app/components/navbar/navbar.html'"></div>
-
+  <div class="page-header" align="center">
+    <h3 style="color: chocolate;">Create Neighbourhood </h3>      
+  </div>
   <div ng-init="getCities();">
   
    	 <div class="row" style="margin-top:10px;">
@@ -26,6 +28,7 @@
   </div>
 
   <div class="row" style="margin-top:15px;" ng-show="onCity"> 
+
   <div class="col-md-8" style="height:500px;">
 	<div id="map"></div>
   </div>
@@ -57,7 +60,7 @@
                <div class="col-md-4">
                <label>Sub Locality:</label></div>
                <div class="col-md-8">
-               <input type="text" ng-model="neiForm.sublocality" class="form-control" placeholder="sub locality name"></div>
+               <input type="text" ng-model="neiForm.sublocality" class="form-control" placeholder="sub locality name" required></div>
           </div>
 
            <div class="form-group row">
@@ -71,14 +74,14 @@
                <div class="col-md-4">
                <label>City:</label></div>
                <div class="col-md-8">
-               <input type="text" ng-model="neiForm.city" class="form-control" placeholder="locality name" required></div>
+               <input type="text" ng-model="neiForm.city" class="form-control" placeholder="locality name" required ng-disabled="true"></div>
           </div>
 
           <div class="form-group row">
                <div class="col-md-4">
                <label>State:</label></div>
                <div class="col-md-8">
-               <input type="text" ng-model="neiForm.state" class="form-control" placeholder="locality name" required></div>
+               <input type="text" ng-model="neiForm.state" class="form-control" placeholder="locality name" required ng-disabled="true"></div>
           </div>
 
           <div class="form-group row">
@@ -97,6 +100,7 @@
  		 </form>
   
   		</div>
-  	</div>
 
+  	</div>
+<div class="alert alert-info" role="alert" align="center" ng-show="createMessage"><h5 style="color: crimson;font-size: large;">Refresh the browser to create New Hamlet</h5></div>
 </div>

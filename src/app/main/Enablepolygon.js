@@ -13,7 +13,7 @@ angular.module('consoles')
   			$scope.disableNeighbour();
   		}else
   		{
-  			$modalInstance().dismiss('Polygon Not Disabled');
+  			$modalInstance().dismiss('Polygon Not Enabled');
   		}
   		
 	  }

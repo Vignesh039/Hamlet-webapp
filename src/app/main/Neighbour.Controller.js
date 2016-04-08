@@ -6,7 +6,7 @@ angular.module('consoles')
       $scope.neiForm={};
       $scope.neiForm.country="India";
       $scope.cityList.city="NONE";
-      
+      var drawControl;
       var featureGroup,drawGroup;
       var session = localStorageService.get("sessiontoken");
       $scope.getCities=function(){
@@ -41,7 +41,7 @@ angular.module('consoles')
        });
        featureGroup =  new L.FeatureGroup().addTo($scope.map);
        drawGroup = new L.FeatureGroup().addTo($scope.map);
-        var drawControl = new L.Control.Draw({
+        drawControl = new L.Control.Draw({
           draw: {
           polyline: false,
           marker: false,
@@ -50,6 +50,8 @@ angular.module('consoles')
           },
           edit: {featureGroup: drawGroup}
           });
+        var fullscreenControl = new L.Control.Fullscreen().addTo($scope.map);
+
         $scope.map.addControl(drawControl);
         $scope.map.setView([17.353044912613186,78.48209023475647], 12);
         $scope.map.on('draw:created',showPolygonAreaCreated);
@@ -208,6 +210,7 @@ angular.module('consoles')
                $scope.createErrorMessage=false;
                $scope.createMessage ="Successfully Polygon Created";
                $scope.neiForm.sub=true;
+               $scope.map.removeControl(drawControl);
                }else
               {
                $scope.createMessage=false;

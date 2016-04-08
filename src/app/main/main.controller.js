@@ -4,13 +4,15 @@ angular.module('consoles')
       'use strict';
      
  	$scope.accForm={};
- 	$scope.accForm.utype = "hamlet_executive";
+  $scope.accForm.utype = "hamlet_executive";
  	$scope.accForm.city="HYD";
  	$scope.myValue = true;
-    var session = localStorageService.get("sessiontoken");
+  var session = localStorageService.get("sessiontoken");
       
 
 $scope.getCities=function(){
+  //$scope.accForm.uname="";
+  //$scope.accForm.pwd="";
    var req1 = {
             method: 'Get',
             url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhoods/cities",
@@ -28,10 +30,10 @@ $scope.getCities=function(){
                  //$state.go('requests',{}, {reload: true});
               }else
               {
-               $scope.message = data.error;
+               $scope.message = data.error.reason;
               }
            }).error(function(data) {
-              console.log(data,"error data");
+              $scope.message ="Page not Found"
           });
     }
   $scope.userTypeSelction=function(){
@@ -46,6 +48,14 @@ $scope.getCities=function(){
   	
   }
 	$scope.createAccount=function(){
+    console.log("createAccount");
+    var reqParams = {};
+    reqParams["email"]=$scope.accForm.uname;
+    reqParams["password"]=$scope.accForm.pwd;
+    reqParams["user_type"]=$scope.accForm.utype;
+    if($scope.accForm.utype === "hamlet_executive")
+    reqParams["cities"]=$scope.accForm.city;
+  
 		var req1 = {
             method: 'POST',
             url: ZIPPR_ENVIRONMENT.server+"/hamlet/nadmin/user",
@@ -53,23 +63,22 @@ $scope.getCities=function(){
                      "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
                      "x-hamlet-sessiontoken":session
             },
-            data:{"email": $scope.accForm.uname,
-				    "password": $scope.accForm.pwd,
-				    "cities": $scope.accForm.city,
-				    "user_type": $scope.accForm.utype}
+            data:reqParams
             };
 
              $http(req1).success(function(data) {
               if(data.ok === true)
               {
+                $scope.createErrorMessage=false;
                 $scope.createMessage="User Created successfully";
                 $scope.submitbtn = true;
                }else
               {
-               $scope.createMessage = data.error.reason;
+               $scope.createMessage = false;
+               $scope.createErrorMessage=data.error.reason;
               }
            }).error(function(data) {
-              console.log(data,"error data");
+              $scope.createErrorMessage="Page Not Found";
           });
 		
 	}

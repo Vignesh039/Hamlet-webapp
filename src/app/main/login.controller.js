@@ -18,17 +18,16 @@ angular.module('consoles')
              $http(req1).success(function(data,status,headers,config) {
               if(data.ok === true)
               {
-                console.log(config,"$cookies");
                  localStorageService.set("userName", data.response.username);
                  localStorageService.set("sessiontoken", data.response["x-hamlet-sessiontoken"]);
                  localStorageService.set("userType", data.response.user_type);
                  $state.go('requests',{}, {reload: true});
               }else
               {
-               $scope.message = data.error;
+               $scope.message = data.error.reason;
               }
            }).error(function(data) {
-              console.log(data,"error data");
+              $scope.message="Page Not Found";
           });
      
     };
@@ -63,7 +62,7 @@ angular.module('consoles')
                $scope.loginstatus = data.error.reason;
               }
            }).error(function(data) {
-              console.log(data,"error data");
+              $scope.message="Page Not Found";
           });
      
     };

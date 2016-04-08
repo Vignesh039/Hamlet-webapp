@@ -1,8 +1,11 @@
 <div class="container-fluid">
 
   <div ng-include="'app/components/navbar/navbar.html'"></div>
+  <div class="page-header" align="center">
+    <h3 style="color: chocolate;">Creative New Users </h3>      
+  </div>
   <div align="center" class="row" style="width:50%;" id="form-details" ng-init="getCities();">
-  <form name="Form1" class="form" ng-submit="createAccount()">
+  <form ng-submit="createAccount()" autocomplete="off">
   <div class="form-group">
   <p style="color:red; text-align:center;">{{accountstatus}}</p>
   </div>
@@ -11,14 +14,14 @@
                <div class="col-md-6">
                <label>User Name:</label></div>
                <div class="col-md-6">
-               <input type="email" ng-model="accForm.uname" class="form-control" placeholder="user email id" required></div>
+               <input type="email" ng-model="accForm.uname" class="form-control" placeholder="user email id"  name="username" value="" required></div>
          
          </div>
           <div class="form-group row">
                <div class="col-md-6">
                <label>Password:</label></div>
                <div class="col-md-6">
-               <input type="password" ng-model="accForm.pwd" class="form-control" placeholder="password" required></div>
+               <input type="password" ng-model="accForm.pwd" class="form-control" placeholder="password" value="" required></div>
          
          </div>
 
@@ -36,12 +39,17 @@
          	<div class="col-md-6">
               <label>City Name:</label></div>
               <div class="col-md-6">
-              <select ng-model="accForm.city"  multiple="true" class="form-control" required>
-               <option ng-repeat="cities in citiesList" value="{{cities.code}}">{{cities.name}}</option>
+            <select ng-model="accForm.city"  multiple="true" class="form-control" >
+            <option ng-repeat="cities in citiesList" value="{{cities.code}}">{{cities.name}}</option>
                </select></div>
             </div> 
             <div class="form-group row">
-             <div ng-show="createMessage" class="alert alert-success col-md-6" style="float:right;">{{ createMessage }}</div></div>
+
+             <div ng-show="createMessage" class="alert alert-success col-md-6" style="float:right;">{{ createMessage }}</div>
+
+             <div ng-show="createErrorMessage" class="alert alert-danger col-md-6" style="float:right;">{{ createErrorMessage }}</div>
+
+             </div>
             <div class="form-group row">
              <div class="col-md-6 " style="float:right;">
             <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="submitbtn">Create User</button> </div>
@@ -51,4 +59,3 @@
 
 
 </div>
-<div ui-view></div>

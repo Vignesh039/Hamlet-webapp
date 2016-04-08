@@ -1,7 +1,9 @@
 <div class="container-fluid">
 
   <div ng-include="'app/components/navbar/navbar.html'"></div>
-
+     <div class="page-header" align="center">
+    <h3 style="color: chocolate;">Neighbourhood Requests</h3>      
+  </div>
 		<div class="row" style="margin-top:10px;">
 		            <div class="col-md-1" style="text-align:right">
 		  	        <label>Status : </label></div>
@@ -51,7 +53,7 @@
               <td>{{listzippr.status}}</td>
               <td>{{listzippr.acted_by}}</td>
               <td>{{listzippr.acted_at| date:'medium'}}</td>
-               <td ng-show="(listzippr.status =='REJECTED')&&((listzippr.action =='CREATED')||(listzippr.action =='EDITED')) "><a class="btn btn-primary" ng-click="Resendpage($index);">Resend</a></td>
+               <td ng-show="(listzippr.status =='REJECTED')&&((listzippr.action =='CREATED')||(listzippr.action =='EDITED'))&& userRole "><a class="btn btn-primary" ng-click="Resendpage($index);">Resend</a></td>
             </tr>
 
         </tbody>
