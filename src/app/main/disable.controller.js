@@ -89,6 +89,20 @@ angular.module('consoles')
            
     };
 
+    $scope.Alertshow = function() {
+    var modalInstance = $modal.open({
+      animation: true,
+      templateUrl: 'Message.html',
+      controller:'MessageDismiss',
+      resolve: {'$modalInstance': function() { return function() { return modalInstance; }; }
+           }
+    });
+    modalInstance.result.then(function (response) {
+           //console.log(response,"response");
+        }, function (str) {
+          //console.log(str,"response");
+        });
+  };
 
 
       $scope.onCityChange = function(){
@@ -121,31 +135,39 @@ angular.module('consoles')
                           "type":"Feature",
                           "id":geo._id,
                           "properties": {"name": geo.name},
-                          "geometry": geo.geometry
+                          "geometry": geo.geometry,
+                          "enabled":geo.enabled
                         };
                         finalGeometry.features.push(feature);
                         }
                       var layer1 = L.geoJson(finalGeometry, {
                       onEachFeature: function (feature, layer) {
                        featureGroup.addLayer(layer);
-                      layer.on('dblclick', function(e){
-                        /*if(drawGroup.getLayers().length===0)
-                            {
-                               drawGroup.addLayer(e.target);
-                            }*/
+                       if (feature.enabled !== false)
+                       {
+                           layer.on('dblclick', function(e){
                             var shape = e.target.toGeoJSON();   
                             var shape_for_db = JSON.stringify(shape);
                             $scope.storeDb = JSON.parse(shape_for_db);
                             Messages.setData($scope.storeDb);
                             $scope.show();
-                        
-                         });
+                            });
+                        }else
+                        {
+                          layer.on('dblclick', function(e){
+                             $scope.Alertshow();
+                             });
+                        }
+
                       var content = feature.properties.name;
                       layer.bindPopup(content);
                        },
                       style: function(feature) {
-                      return {fillColor: "#4CAF50",color: '#000000'};
-                      }
+                      if (feature.enabled === false)
+                        return {fillColor: "#FF0000",color: '#FF0000',fillOpacity: 0.5};
+                        else
+                        return {fillColor: "#4CAF50",color: '#008000',fillOpacity: 0.5};
+                         }
                        });
 
                }else{

@@ -98,3 +98,17 @@ tbody{
 .alert {
     padding: 10px;
     }
+
+.form-inline{
+    padding: 10px;
+    }
+.color-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #ccc;
+    position: relative;
+    left: 5px;
+    top: 10px;
+
+}

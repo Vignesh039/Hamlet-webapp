@@ -123,8 +123,8 @@ angular.module('consoles')
                       layer.bindPopup(content);
                        },
                       style: function(feature) {
-                      return {fillColor: "#4CAF50",color: '#000000',opacity: 0.3};
-                      }
+                      return {fillColor: "#008000",color: '#008000',fillOpacity: 0.1};
+                        }
         });
 	  
      

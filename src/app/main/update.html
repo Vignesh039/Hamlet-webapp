@@ -17,7 +17,15 @@
            
              <div ng-show="createErrorMessage" class="alert alert-danger form-group" >{{ createErrorMessage }}</div>
              <div ng-show="createMessage" class="alert alert-success form-group" >{{ createMessage }}</div>
-             
+             <div class="form-group" style="float:right;">
+          <label class="color-box" style="background-color: #FF0000;"></label>
+          <span style="margin-left:10px;">Disabled Neighbours</span>
+           </div>
+
+           <div class="form-group" style="float:right;">
+          <label class="color-box" style="background-color: #4CAF50;"></label>
+          <span style="margin-left:10px;">Active Neighbours</span>
+           </div>
         
   </div>
   </div>
@@ -46,4 +54,21 @@
         </div>
 
         
+    </script>
+
+    <script type="text/ng-template" id="Message.html">
+           
+       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="userConfirmation('No')">&times;</button>
+       
+            <h3 class="modal-title">Warning Message</h3>
+        </div>
+        <div class="modal-body">
+        <span>Disabled polygons are not editable
+        </span>
+        </div>
+        <div class="modal-footer">
+        <br/>
+        </div>
+  
     </script>

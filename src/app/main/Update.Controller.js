@@ -1,6 +1,6 @@
 angular.module('consoles')
-  .controller('UpdateController', ['$scope','$http', 'ZIPPR_ENVIRONMENT','localStorageService',"ModalService",'$modal','Messages',
-    function ($scope,$http,ZIPPR_ENVIRONMENT,localStorageService,ModalService,$modal,Messages) {
+  .controller('UpdateController', ['$scope','$http', 'ZIPPR_ENVIRONMENT','localStorageService',"ModalService",'$modal','Messages','$window',
+    function ($scope,$http,ZIPPR_ENVIRONMENT,localStorageService,ModalService,$modal,Messages,$window) {
       'use strict';
       $scope.cityList={};
       $scope.neiForm={};
@@ -80,6 +80,8 @@ angular.module('consoles')
                 
             }
     });
+
+    
       modalInstance.result.then(function (response) {
             //$scope.selected = response;
             console.log(response,"response");
@@ -94,6 +96,24 @@ angular.module('consoles')
         });
            
     };
+
+
+  
+
+$scope.Alertshow = function() {
+    var modalInstance = $modal.open({
+      animation: true,
+      templateUrl: 'Message.html',
+      controller:'MessageDismiss',
+      resolve: {'$modalInstance': function() { return function() { return modalInstance; }; }
+           }
+    });
+    modalInstance.result.then(function (response) {
+           //console.log(response,"response");
+        }, function (str) {
+          //console.log(str,"response");
+        });
+  };
 
 
 
@@ -127,25 +147,39 @@ angular.module('consoles')
                           "type":"Feature",
                           "id":geo._id,
                           "properties": {"name": geo.name},
-                          "geometry": geo.geometry
+                          "geometry": geo.geometry,
+                          "enabled":geo.enabled
                         };
                         finalGeometry.features.push(feature);
                         }
                       var layer1 = L.geoJson(finalGeometry, {
                       onEachFeature: function (feature, layer) {
                        featureGroup.addLayer(layer);
-                      layer.on('dblclick', function(e){
-                        if(drawGroup.getLayers().length===0)
-                            {
-                               drawGroup.addLayer(e.target);
-                            }
-                        
-                         });
+                       if (feature.enabled !== false)
+                       {
+                           layer.on('dblclick', function(e){
+                            if(drawGroup.getLayers().length===0)
+                                {
+                                   drawGroup.addLayer(e.target);
+                                }
+                            
+                             });
+                        }
+                        else
+                        {
+                          layer.on('dblclick', function(e){
+                             $scope.Alertshow();
+                             });
+                        }
                       var content = feature.properties.name;
                       layer.bindPopup(content);
                        },
                       style: function(feature) {
-                      return {fillColor: "#4CAF50",color: '#000000'};
+                      if (feature.enabled === false)
+                        return {fillColor: "#FF0000",color: '#FF0000',fillOpacity: 0.5};
+                        else
+                        return {fillColor: "#4CAF50",color: '#008000',fillOpacity: 0.5};
+                         
                       }
                        });
 

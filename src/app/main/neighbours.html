@@ -6,22 +6,26 @@
   </div>
   <div ng-init="getCities();">
   
-   	 <div class="row" style="margin-top:10px;">
-  	         <div class="col-md-1">
-         	 <label>Select City Name:</label>
-         	 </div>
+   	<div class="form-inline">
 
-        <div class="col-md-2">
+  	    <div class="form-group">
+        <label>Select City Name:</label>
         <select id="cityList" ng-model="cityList.city" class="form-control" ng-change="createNewNeighbor();">
                <option ng-repeat="cities in citiesList" value="{{cities.code}}">{{cities.name}}</option>
                <option value="NONE">Select City</option>
                </select>
               </div>
-            
-             
-             <div class="col-md-6">
-            
-             </div>
+
+        <div class="form-group" style="float:right;">
+          <label class="color-box" style="background-color: #FF0000;"></label>
+          <span style="margin-left:10px;">Disabled Neighbours</span>
+           </div>
+
+           <div class="form-group" style="float:right;">
+          <label class="color-box" style="background-color: #4CAF50;"></label>
+          <span style="margin-left:10px;">Active Neighbours</span>
+           </div>
+                  
 
         </div>
  

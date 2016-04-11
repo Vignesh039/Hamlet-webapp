@@ -104,7 +104,8 @@ angular.module('consoles')
                           "type":"Feature",
                           "id":geo._id,
                           "properties": {"name": geo.name},
-                          "geometry": geo.geometry
+                          "geometry": geo.geometry,
+                          "enabled":geo.enabled
                         };
                         finalGeometry.features.push(feature);
                         }
@@ -123,8 +124,11 @@ angular.module('consoles')
                       layer.bindPopup(content);
                        },
                       style: function(feature) {
-                      return {fillColor: "#4CAF50",color: '#000000'};
-                      }
+                       if (feature.enabled === false)
+                        return {fillColor: "#FF0000",color: '#FF0000',fillOpacity: 0.5};
+                        else
+                        return {fillColor: "#4CAF50",color: '#008000',fillOpacity: 0.5};
+                         }
                        });
 
                }else{

@@ -89,7 +89,7 @@ angular.module('consoles')
      $scope.GotoViewpage = function(obj)
      {
       $location.id = obj.listzippr._id;
-      $location.stat = $scope.request.stats; 
+      $location.stat = obj.listzippr.status; 
       }
 $scope.Resendpage= function(obj)
      {
