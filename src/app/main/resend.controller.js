@@ -10,8 +10,10 @@ angular.module('consoles')
       $state.go('requests');
     }else
     {
-      console.log($location.resendObj,"$location.resendObj");
+      //var str = String($location.resendObj.city);
+      //getCityData(str);
       initializeMap();
+      
     }
     
     function initializeMap()
@@ -94,6 +96,72 @@ angular.module('consoles')
         });
            
     };
+
+    function getCityData(obj)
+    {
+      var req1 = {
+            method: 'GET',
+            url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhoods",
+            headers:{"Content-Type":"application/json",
+                     "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
+                     "x-hamlet-sessiontoken":session
+            },
+            params:{"city":obj}
+            };
+
+             $http(req1).success(function(data) {
+              if(data.ok === true)
+              {
+                      var obj = data.response;
+                      //console.log(obj,"from server");
+                      var finalGeometry = {"type":"FeatureCollection", "features": []}
+                      for(var i in data.response){
+                        var geo = data.response[i];
+                        var feature = {
+                          "type":"Feature",
+                          "id":geo._id,
+                          "properties": {"name": geo.name},
+                          "geometry": geo.geometry,
+                          "enabled":geo.enabled
+                        };
+                        finalGeometry.features.push(feature);
+                        }
+                      var layer1 = L.geoJson(finalGeometry, {
+                      onEachFeature: function (feature, layer) {
+                       featureGroup.addLayer(layer);
+                       if (feature.enabled !== false)
+                       {
+                           layer.on('dblclick', function(e){
+                            if(drawGroup.getLayers().length===0)
+                                {
+                                   drawGroup.addLayer(e.target);
+                                }
+                            
+                             });
+                        }
+                        else
+                        {
+                          layer.on('dblclick', function(e){
+                             $scope.Alertshow();
+                             });
+                        }
+                      var content = feature.properties.name;
+                      layer.bindPopup(content);
+                       },
+                      style: function(feature) {
+                      if (feature.enabled === false)
+                        return {fillColor: "#FF0000",color: '#FF0000',fillOpacity: 0.5};
+                        else
+                        return {fillColor: "#4CAF50",color: '#008000',fillOpacity: 0.5};
+                         
+                      }
+                       });
+
+               }else{
+                $scope.message = data.error.reason;
+              }
+           })
+    }
 
   
 

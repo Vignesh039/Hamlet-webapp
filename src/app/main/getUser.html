@@ -14,7 +14,7 @@
                    ng-model="userEmail" name="name" autofocus required>
          	 </div>
          	 <div class="form-group">
-         	 	<input type="submit" class="btn btn-primary" value="Submit"/>
+         	 	<input type="submit" class="btn btn-primary" value="Search"/>
          	 </div>
    </form>
 
@@ -51,8 +51,9 @@
          <label>UserType:</label></div>
          <div class="col-md-8">
          <select name="singleSelect" ng-model="userDes.user_type"  class="form-control" required >
-     	 <option value="hamlet_executive">Excutive</option>
+     	   <option value="hamlet_executive">Excutive</option>
          <option value="hamlet_manager">Manager</option>
+         <option value="null">Select Type</option>
          </select></div>
          </div>
         
@@ -60,7 +61,7 @@
          	<div class="col-md-4">
               <label>City Name:</label></div>
               <div class="col-md-8">
-            <select ng-model="userDes.cities"  multiple="true" class="form-control" >
+            <select ng-model="userDes.cities"  multiple="true" class="form-control" required>
             <option ng-repeat="cities in citiesList" value="{{cities.code}}">{{cities.name}}</option>
                </select></div>
             </div> 

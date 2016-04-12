@@ -3,7 +3,10 @@ angular.module('consoles')
     function ($scope, $resource,$http,localStorageService,ZIPPR_ENVIRONMENT,Messages) {
       'use strict';
     var session = localStorageService.get("sessiontoken");
+     $scope.userDes={};
      $scope.getCities=function(){
+      
+
       var req1 = {
             method: 'Get',
             url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhoods/cities",
@@ -29,7 +32,10 @@ angular.module('consoles')
     }  
  	
 	$scope.getuserDetails=function(){
-   
+      $scope.userDes={};
+      $scope.createMessage=false;
+      $scope.updateErrorMessage=false;
+      $scope.updatecreateMessage=false;
 		var req1 = {
             method: 'GET',
             url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/user/details",
@@ -43,7 +49,25 @@ angular.module('consoles')
              $http(req1).success(function(data) {
               if(data.ok === true)
               {
-                $scope.userDes=data.response;
+                
+                if ((data.response.user_type == "hamlet_executive")||(data.response.user_type == "hamlet_manager"))
+                 {
+                  $scope.userDes=data.response;
+                }else
+                {
+                  $scope.userDes=data.response;
+                  if(data.response.user_type.length>0)
+                  {
+                    for(var i=0;i<data.response.user_type.length;i++)
+                    {
+                      if ((data.response.user_type[i] == "hamlet_executive")||(data.response.user_type[i] == "hamlet_manager"))
+                        $scope.userDes.user_type=data.response.user_type[i];
+                    }
+                  }
+                  else
+                  $scope.userDes.user_type="null";
+                }
+                
                 $scope.createErrorMessage=false;
                 $scope.createMessage="User Created successfully";
                 
@@ -60,7 +84,9 @@ angular.module('consoles')
 
   $scope.UpdateUserAccount=function()
   {
-    console.log("update fired");
+    console.log($scope.userDes.user_type,"update fired");
+   if($scope.userDes.user_type !== 'null')
+   {
     var reqParams = {};
     reqParams["user_type"]= $scope.userDes.user_type;
     if($scope.userDes.user_type==="hamlet_executive")
@@ -90,6 +116,11 @@ angular.module('consoles')
            }).error(function(data) {
               $scope.updateErrorMessage="Page Not Found";
           });
+        }else
+        {
+          $scope.updateErrorMessage ="Select userType"
+        }
+
   }
 
   }]);//main close
