@@ -57,7 +57,7 @@
               <td>{{listzippr.status}}</td>
               <td>{{listzippr.acted_by}}</td>
               <td>{{listzippr.acted_at| date:'medium'}}</td>
-               <td ng-show="(listzippr.status =='REJECTED')&&((listzippr.action =='CREATED')||(listzippr.action =='EDITED'))&& userRole "><a class="btn btn-primary" ng-click="Resendpage($index);">Resend</a></td>
+               <td ng-show="(listzippr.status =='REJECTED')&&((listzippr.action =='CREATED')||(listzippr.action =='EDITED'))&& (listzippr.is_resend == undefined) "><a class="btn btn-primary" ng-click="Resendpage($index);">Resend</a></td>
             </tr>
 
         </tbody>
