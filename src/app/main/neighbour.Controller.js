@@ -1,6 +1,6 @@
 angular.module('consoles')
-  .controller('NeighbourController', ['$scope','$http', 'ZIPPR_ENVIRONMENT','localStorageService',
-    function ($scope,$http, ZIPPR_ENVIRONMENT,localStorageService) {
+  .controller('NeighbourController', ['$scope','$http', 'ZIPPR_ENVIRONMENT','localStorageService','$state',
+    function ($scope,$http, ZIPPR_ENVIRONMENT,localStorageService,$state) {
       'use strict';
       $scope.cityList={};
       $scope.neiForm={};
@@ -228,6 +228,12 @@ angular.module('consoles')
           $scope.createErrorMessage ="Draw new Polygon on Map Then save";
          }
      
+     }
+
+     $scope.RefreshNeighbor=function(){
+      console.log("refreshed");
+      $state.go('neighbours',{}, {reload: true});
+              
      }
 
 

@@ -98,7 +98,8 @@
              <div class="col-md-8 " style="float:right;">
             <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="neiForm.sub">Create Hamlet</button> </div>
             </div>
-            <div class="form-group row">
+
+             <div class="form-group row">
              <div ng-show="createErrorMessage" class="alert alert-danger col-md-8" style="float:right;">{{ createErrorMessage }}</div>
              <div ng-show="createMessage" class="alert alert-success col-md-8" style="float:right;">{{ createMessage }}</div></div>
  		 </form>
@@ -106,5 +107,10 @@
   		</div>
 
   	</div>
-<div class="alert alert-info" role="alert" align="center" ng-show="createMessage"><h5 style="color: crimson;font-size: large;">Refresh the browser to create New Hamlet</h5></div>
+    <div class="form-group row" style="float:right;padding:10px;" ng-show="createMessage">
+    <div class="col-md-8">
+    <button class="btn btn-lg btn-success " type="submit" ng-click="RefreshNeighbor();">Create New Hamlet</button> 
+    </div>
+    </div>
+
 </div>
