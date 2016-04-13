@@ -18,7 +18,6 @@ angular.module('consoles')
        $scope.userRole= true;
      }else
      {
-      console.log("vignesh");
       $scope.actionBy = true;
       $scope.userRole= false;
      }

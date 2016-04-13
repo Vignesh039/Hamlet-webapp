@@ -35,8 +35,22 @@
  
 <div ng-show="errormessage" class="alert alert-danger">{{ errormessage }}</div>
 <div ng-show="sucessmessage" class="alert alert-success">{{ sucessmessage }}</div>
-</div>
 
+<div class="form-inline" style="padding:15px;margin-bottom:15px;">
+  <div class="form-group" style="float:right;">
+          <label class="color-box" style="background-color: #FF0000;"></label>
+          <span style="margin-left:10px;">Disabled Neighbours</span>
+           </div>
+
+           <div class="form-group" style="float:right;">
+          <label class="color-box" style="background-color: #4CAF50;"></label>
+          <span style="margin-left:10px;">Active Neighbours</span>
+           </div>
+           <div class="form-group" style="float:right;">
+          <label class="color-box" style="background-color: #0000FF;"></label>
+          <span style="margin-left:10px;">Resend Neighbours</span>
+           </div>
+</div></div>
  
  <div style="width:100%;height:600px;border:1px solid;margin-top:15px;">
 	<div id="map"></div>

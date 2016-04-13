@@ -4,16 +4,15 @@ angular.module('consoles')
     function ($scope,$http,$state,ZIPPR_ENVIRONMENT,$location,localStorageService,ModalService,$modal,Messages) {
       'use strict';
      var session = localStorageService.get("sessiontoken");
-     var featureGroup,drawControl;
+     var featureGroup,drawControl,drawGroup;
      if($location.resendObj === undefined)
      {
       $state.go('requests');
     }else
     {
-      //var str = String($location.resendObj.city);
-      //getCityData(str);
+      var str = String($location.resendObj.city);
       initializeMap();
-      
+      getCityData(str);
     }
     
     function initializeMap()
@@ -24,6 +23,8 @@ angular.module('consoles')
         var centerPoint = $scope.idReport.geometry.coordinates[0][0];
         $scope.map.setView([centerPoint[1],centerPoint[0]], 17);
         featureGroup =  new L.FeatureGroup().addTo($scope.map);
+        drawGroup=  new L.FeatureGroup().addTo($scope.map);
+      
         drawControl = new L.Control.Draw({
           draw: {
           polyline: false,
@@ -32,7 +33,7 @@ angular.module('consoles')
           rectangle:false,
           circle:false
           },
-          edit: {featureGroup: featureGroup}
+          edit: {featureGroup: drawGroup}
           });
         $scope.map.addControl(drawControl);
 
@@ -47,11 +48,11 @@ angular.module('consoles')
        finalGeometry.features.push(feature);
        var layer1 = L.geoJson(finalGeometry, {
        onEachFeature: function (feature, layer) {
-       featureGroup.addLayer(layer);
+       drawGroup.addLayer(layer);
        var content = feature.properties.name;
        layer.bindPopup(content);
        },style: function(feature) {
-         return {fillColor: "#4CAF50",color: '#000000',fillOpacity: 0.5};//,opacity: 0.1
+         return {fillColor: "#0000FF",color: '#0000FF',fillOpacity: 0.5};//,opacity: 0.1
          }
         });
        $scope.map.on('draw:edited' ,showPolygonAreaEdited);
@@ -129,23 +130,7 @@ angular.module('consoles')
                       var layer1 = L.geoJson(finalGeometry, {
                       onEachFeature: function (feature, layer) {
                        featureGroup.addLayer(layer);
-                       if (feature.enabled !== false)
-                       {
-                           layer.on('dblclick', function(e){
-                            if(drawGroup.getLayers().length===0)
-                                {
-                                   drawGroup.addLayer(e.target);
-                                }
-                            
-                             });
-                        }
-                        else
-                        {
-                          layer.on('dblclick', function(e){
-                             $scope.Alertshow();
-                             });
-                        }
-                      var content = feature.properties.name;
+                       var content = feature.properties.name;
                       layer.bindPopup(content);
                        },
                       style: function(feature) {
