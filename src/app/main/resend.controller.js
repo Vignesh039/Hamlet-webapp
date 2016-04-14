@@ -38,7 +38,7 @@ angular.module('consoles')
           });
         $scope.map.addControl(drawControl);
 
-       var finalGeometry = {"type":"FeatureCollection", "features": []}
+      /* var finalGeometry = {"type":"FeatureCollection", "features": []}
        var geo = $scope.idReport;
        var feature = {
        "type":"Feature",
@@ -55,7 +55,7 @@ angular.module('consoles')
        },style: function(feature) {
          return {fillColor: "#0000FF",color: '#0000FF',fillOpacity: 0.5};//,opacity: 0.1
          }
-        });
+        });*/
        $scope.map.on('draw:edited' ,showPolygonAreaEdited);
         var myElements = document.querySelectorAll(".leaflet-draw-edit-remove");
            for (var i = 0; i < myElements.length; i++) {
@@ -132,12 +132,23 @@ angular.module('consoles')
      
                       var layer1 = L.geoJson(finalGeometry, {
                       onEachFeature: function (feature, layer) {
+                        console.log(feature,"feature");
+                        if($scope.idReport.neighbourhood_id == feature.id)
+                        {
+                          drawGroup.addLayer(layer);
+                          console.log("matched");
+                        }
+                        
+
                        featureGroup.addLayer(layer);
                        var content = feature.properties.name;
                        layer.bindPopup(content);
                        },
                       style: function(feature) {
-                      if (feature.enabled === false)
+                        if($scope.idReport.neighbourhood_id == feature.id)
+                        return {fillColor: "#0000FF",color: '#0000FF',fillOpacity: 0.5};//,opacity: 0.1
+                        
+                        if (feature.enabled === false)
                         return {fillColor: "#FF0000",color: '#FF0000',fillOpacity: 0.5};
                         else
                         return {fillColor: "#4CAF50",color: '#008000',fillOpacity: 0.5};
