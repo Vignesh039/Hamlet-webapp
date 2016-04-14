@@ -21,7 +21,7 @@ angular.module('consoles')
       console.log(objdata.features[0],"objdata.features[0]");
       var req1 = {
             method: 'POST',
-            url: ZIPPR_ENVIRONMENT.server+"/hamlet/nadmin/neighbourhoods/resend",
+            url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhoods/resend",
             headers:{"Content-Type":"application/json",
                      "x-hamlet-api-key":ZIPPR_ENVIRONMENT.apikey,
                      "x-hamlet-sessiontoken":session
@@ -43,7 +43,7 @@ angular.module('consoles')
                
               }
            }).error(function(data) {
-              $modalInstance().dismiss(data);
+              $modalInstance().dismiss("page not found");
            });
          
      
