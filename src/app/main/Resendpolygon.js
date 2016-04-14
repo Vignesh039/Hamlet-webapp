@@ -43,7 +43,7 @@ angular.module('consoles')
                
               }
            }).error(function(data) {
-              $modalInstance().dismiss("page not found");
+              $modalInstance().dismiss("404 - page not found");
            });
          
      
