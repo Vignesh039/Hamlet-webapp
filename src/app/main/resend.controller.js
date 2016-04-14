@@ -17,7 +17,8 @@ angular.module('consoles')
     
     function initializeMap()
     {
-     $scope.idReport = $location.resendObj;
+      $scope.idReport = $location.resendObj;
+
      L.mapbox.accessToken = 'pk.eyJ1IjoiYXZ1Y2hpIiwiYSI6InlIcWxFWWcifQ.JnJCwFkMDgCfdVrOuSXaWw#11/19.0644/72.9849';
         $scope.map =L.mapbox.map('map', 'mapbox.streets');
         var centerPoint = $scope.idReport.geometry.coordinates[0][0];
@@ -65,7 +66,7 @@ angular.module('consoles')
 
     function showPolygonAreaEdited(e) {
           e.layers.eachLayer(function(layer) {
-            var shape = featureGroup.toGeoJSON();   
+            var shape = drawGroup.toGeoJSON();   
             var shape_for_db = JSON.stringify(shape);
             $scope.storeDb = JSON.parse(shape_for_db);
             Messages.setData($scope.storeDb);
@@ -85,7 +86,7 @@ angular.module('consoles')
           });
           modalInstance.result.then(function (response) {
                 //$scope.selected = response;
-                console.log(response,"response");
+               // console.log(response,"response");
             }, function (str) {
               if(str === "success"){
                 $scope.Errormessage=false;
@@ -127,11 +128,13 @@ angular.module('consoles')
                         };
                         finalGeometry.features.push(feature);
                         }
+                        console.log($scope.idReport,"$scope.idReport");
+     
                       var layer1 = L.geoJson(finalGeometry, {
                       onEachFeature: function (feature, layer) {
                        featureGroup.addLayer(layer);
                        var content = feature.properties.name;
-                      layer.bindPopup(content);
+                       layer.bindPopup(content);
                        },
                       style: function(feature) {
                       if (feature.enabled === false)
