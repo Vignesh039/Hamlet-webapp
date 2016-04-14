@@ -18,7 +18,7 @@ angular.module('consoles')
 	  }
 
 	  $scope.updateNeighbour=function(){
-      
+      console.log(objdata.features[0],"objdata.features[0]");
       var req1 = {
             method: 'POST',
             url: ZIPPR_ENVIRONMENT.server+"/hamlet/nadmin/neighbourhoods/resend",

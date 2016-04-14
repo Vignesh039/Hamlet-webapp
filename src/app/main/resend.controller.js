@@ -37,25 +37,29 @@ angular.module('consoles')
           edit: {featureGroup: drawGroup}
           });
         $scope.map.addControl(drawControl);
-
-      /* var finalGeometry = {"type":"FeatureCollection", "features": []}
-       var geo = $scope.idReport;
-       var feature = {
-       "type":"Feature",
-       "id":geo._id,
-       "properties": {"name": geo.name},
-       "geometry": geo.geometry
-       };
-       finalGeometry.features.push(feature);
-       var layer1 = L.geoJson(finalGeometry, {
-       onEachFeature: function (feature, layer) {
-       drawGroup.addLayer(layer);
-       var content = feature.properties.name;
-       layer.bindPopup(content);
-       },style: function(feature) {
-         return {fillColor: "#0000FF",color: '#0000FF',fillOpacity: 0.5};//,opacity: 0.1
-         }
-        });*/
+       
+       if($scope.idReport.action =="CREATED")
+        {
+           var finalGeometry = {"type":"FeatureCollection", "features": []}
+           var geo = $scope.idReport;
+           var feature = {
+           "type":"Feature",
+           "id":geo._id,
+           "properties": {"name": geo.name},
+           "geometry": geo.geometry
+           };
+           finalGeometry.features.push(feature);
+           var layer1 = L.geoJson(finalGeometry, {
+           onEachFeature: function (feature, layer) {
+           drawGroup.addLayer(layer);
+           var content = feature.properties.name;
+           layer.bindPopup(content);
+           },style: function(feature) {
+             return {fillColor: "#0000FF",color: '#0000FF',fillOpacity: 0.5};//,opacity: 0.1
+             }
+            });
+     }
+      
        $scope.map.on('draw:edited' ,showPolygonAreaEdited);
         var myElements = document.querySelectorAll(".leaflet-draw-edit-remove");
            for (var i = 0; i < myElements.length; i++) {
@@ -128,19 +132,14 @@ angular.module('consoles')
                         };
                         finalGeometry.features.push(feature);
                         }
-                        console.log($scope.idReport,"$scope.idReport");
-     
+                        
                       var layer1 = L.geoJson(finalGeometry, {
                       onEachFeature: function (feature, layer) {
-                        console.log(feature,"feature");
                         if($scope.idReport.neighbourhood_id == feature.id)
                         {
                           drawGroup.addLayer(layer);
-                          console.log("matched");
                         }
-                        
-
-                       featureGroup.addLayer(layer);
+                        featureGroup.addLayer(layer);
                        var content = feature.properties.name;
                        layer.bindPopup(content);
                        },
