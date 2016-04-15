@@ -18,7 +18,7 @@ angular.module('consoles')
     function initializeMap()
     {
       $scope.idReport = $location.resendObj;
-
+      console.log($scope.idReport,"$scope.idReport");
      L.mapbox.accessToken = 'pk.eyJ1IjoiYXZ1Y2hpIiwiYSI6InlIcWxFWWcifQ.JnJCwFkMDgCfdVrOuSXaWw#11/19.0644/72.9849';
         $scope.map =L.mapbox.map('map', 'mapbox.streets');
         var centerPoint = $scope.idReport.geometry.coordinates[0][0];
@@ -73,7 +73,9 @@ angular.module('consoles')
             var shape = drawGroup.toGeoJSON();   
             var shape_for_db = JSON.stringify(shape);
             $scope.storeDb = JSON.parse(shape_for_db);
+            $scope.storeDb.features[0].id = $scope.idReport._id;
             Messages.setData($scope.storeDb);
+            console.log($scope.storeDb,"$scope.storeDb");
             $scope.show();
             
           });
