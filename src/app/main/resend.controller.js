@@ -95,11 +95,11 @@ angular.module('consoles')
                // console.log(response,"response");
             }, function (str) {
               if(str === "success"){
-                $scope.Errormessage=false;
-                $scope.createMessage ="Successfully Polygon updated";
+                $scope.errormessage=false;
+                $scope.sucessmessage ="Successfully Polygon Resend";
                 }else{
-                   $scope.createMessage=false;
-                   $scope.Errormessage = str;
+                   $scope.sucessmessage=false;
+                   $scope.errormessage = str;
                 }
         });
            
