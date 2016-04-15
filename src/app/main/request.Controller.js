@@ -19,7 +19,7 @@ angular.module('consoles')
      }else
      {
       $scope.actionBy = true;
-      $scope.userRole= true;
+      $scope.userRole= false;
      }
 
      $scope.getRecords=function(){
