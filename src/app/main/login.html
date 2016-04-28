@@ -9,13 +9,13 @@
         <div style="color:red;margin-bottom:20px;">{{loginstatus}} </div>
         <div class="form-group" ng-class="{'has-error': showValidation && loginForm.name.$invalid}">
             <input class="form-control" type="text" placeholder="User Name" id="userName"
-                   ng-model="userName" name="name" autofocus required="true">
+                   ng-model="userName" name="name" autofocus required>
             <span class="error-message" ng-show="showValidation && loginForm.name.$error.required">User name is required</span>
         </div>
 
         <div class="form-group" ng-class="{'has-error': showValidation && loginForm.password.$invalid}">
             <input class="form-control" type="password" placeholder="Password"
-               ng-model="password" name="password" required="true" required="true">
+               ng-model="password" name="password" required="true" required>
             <span class="error-message" ng-show="showValidation && loginForm.password.$error.required">You must enter a password</span>
         </div>
 

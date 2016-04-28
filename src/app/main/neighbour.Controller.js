@@ -188,6 +188,7 @@ angular.module('consoles')
       //console.log($scope.cityList.city,"$scope.cityList.city");
       if (typeof $scope.storeDb === "object") 
         {
+      $scope.neiForm.sub=true;
       var req1 = {
             method: 'POST',
             url: ZIPPR_ENVIRONMENT.server+"hamlet/nadmin/neighbourhoods/add",
@@ -213,7 +214,6 @@ angular.module('consoles')
               {
                $scope.createErrorMessage=false;
                $scope.createMessage ="Successfully Polygon Created";
-               $scope.neiForm.sub=true;
                $scope.map.removeControl(drawControl);
                }else
               {
@@ -221,7 +221,7 @@ angular.module('consoles')
                $scope.createErrorMessage = data.error.reason;
               }
            }).error(function(data) {
-              console.log(data,"error data");
+              $scope.createErrorMessage ="404  Page not found";
            });
          }else
          {
@@ -231,7 +231,7 @@ angular.module('consoles')
      }
 
      $scope.RefreshNeighbor=function(){
-      console.log("refreshed");
+      //console.log("refreshed");
       $state.go('neighbours',{}, {reload: true});
               
      }
