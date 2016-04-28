@@ -1,7 +1,7 @@
 
 angular.module('consoles')
-  .controller('NavbarController', ['$rootScope','$scope','localStorageService', '$state','ZIPPR_ENVIRONMENT','$http',
-    function ($rootScope,$scope,localStorageService,$state,ZIPPR_ENVIRONMENT,$http) {
+  .controller('NavbarController', ['$window','$rootScope','$scope','localStorageService', '$state','ZIPPR_ENVIRONMENT','$http',
+    function ($window,$rootScope,$scope,localStorageService,$state,ZIPPR_ENVIRONMENT,$http) {
       'use strict';
      var username = localStorageService.get("userName");
      $scope.LoggedInUser = username;
