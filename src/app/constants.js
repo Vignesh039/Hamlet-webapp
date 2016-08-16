@@ -1,8 +1,8 @@
 angular.module("zippr.config", [])
 
 .constant("ZIPPR_ENVIRONMENT", {
-	"server": "http://api.myhamlet.in/",
-	"apikey": "0c894fc5-b214-4ad8-a1be-7c750e9c4e59"
+	"server": "http://hamletdev.zip.pr/",
+	"apikey": "d338667c0196254de1922668f5b1344ba80e54fd0ef481f09cef5336b6471a99"
 })
 
 ;
